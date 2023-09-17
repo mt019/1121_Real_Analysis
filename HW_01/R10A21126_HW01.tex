@@ -55,9 +55,115 @@
 
   \begin{Problem}[]{Zygmund p58 exercise 03}
 
-    Construct a two-dimensional Cantor set in the unit square $\{(x, y) : 0 \leq x, y \leq 1\}$ as follows. Subdivide the square into nine equal parts and keep only the four closed corner squares, removing the remaining region (which forms a cross). Then repeat this process in a suitably scaled version for the remaining squares, ad infinitum. Show that the resulting set is perfect, has plane measure zero, and equals $\mathcal{C} \times \mathcal{C} $
+    Construct a two-dimensional Cantor set in the unit square $\{(x, y) : 0 \leq x, y \leq 1\}$ as follows. Subdivide the square into nine equal parts and keep only the four closed corner squares, removing the remaining region (which forms a cross). Then repeat this process in a suitably scaled version for the remaining squares, ad infinitum. Show that the resulting set is perfect, has plane measure zero, and equals $\mathcal{C} \times \mathcal{C}$.
   
   \end{Problem}
+
+
+  \begin{solution}\,\\
+    Let \(D_0\) be the unit square \(\{(x,y): 0\leq (x,y)\leq 1\}\). Let \(D_k\) be the set remaining after \(i\) steps. Let \(D = \bigcap_{k=1}^{\infty} D_k \) be the resulting set.
+
+    
+
+    (a) To prove that it is a perfect set, we need to show that every point in the set is a limit point of the set.
+    \begin{mybox}{Theorem 1.7}
+      \begin{enumerate}[label=(\roman*)]
+        \item The intersection of any number of closed sets is closed.
+        \item The union of any number of open sets is open.
+      \end{enumerate}
+    \end{mybox}
+    Since each \(D_k\) is closed, it follows from Theorem 1.7 that \(D\) is closed. Note that \(D_k\) consists of \(4^k\) closed disjoint intervals, each of which 
+
+
+    (b)\\
+    Since \(D\) is covered by the intervals in any \(D_k\), we have
+    \begin{equation*}
+      \begin{aligned}
+        \left\lvert D\right\rvert_e \leq \left\lvert D_k \right\rvert_e = \left(\frac{4}{9}\right)^{k}.
+      \end{aligned}
+    \end{equation*}
+    Let \(k\to\infty\), we have \(\left\lvert D\right\rvert_e = 0\).
+
+
+    (c)
+    \begin{equation*}
+      \begin{aligned}
+        D := \bigcap_{k=1}^{\infty} D_k := \bigcap_{k=1}^{\infty} C_k \times C_k =  \left(\bigcap_{k=1}^{\infty} C_k\right) \times \left(\bigcap_{k=1}^{\infty} C_k\right) = C\times C.
+      \end{aligned}
+    \end{equation*}
+
+    To prove that \(\bigcap_{k=1}^{\infty} C_k \times C_k = \left(\bigcap_{k=1}^{\infty} C_k\right) \times \left(\bigcap_{k=1}^{\infty} C_k\right) \), start with the inclusion from left to right:
+
+For all
+    \begin{equation*}
+      \begin{aligned}
+          (x,y)\in\bigcap_{k=1}^{\infty} C_k \times C_k
+      \end{aligned}
+    \end{equation*}
+    we have
+    \begin{equation*}
+      \begin{aligned}
+        (x,y)\in C_k \times C_k, \forall k \in \mathbb{N}.
+      \end{aligned}
+    \end{equation*}
+
+    By the definition of Cartesian product, we have
+    \begin{equation*}
+      \begin{aligned}
+        x\in C_k, \forall k \in \mathbb{N},\\
+        y\in C_k, \forall k \in \mathbb{N}.
+      \end{aligned}
+    \end{equation*}
+    Thus,
+    \begin{equation*}
+      \begin{aligned}
+        x\in \bigcap_{k=1}^{\infty} C_k,\\
+        y\in \bigcap_{k=1}^{\infty} C_k.
+      \end{aligned}
+    \end{equation*}
+    Therefore,
+    \begin{equation*}
+      \begin{aligned}
+        (x,y)\in \left(\bigcap_{k=1}^{\infty} C_k\right) \times \left(\bigcap_{k=1}^{\infty} C_k\right),\forall (x,y)\in D.
+      \end{aligned}
+    \end{equation*}
+
+    Next, prove the inclusion from right to left. For all
+    \begin{equation*}
+      \begin{aligned}
+          (x,y)\in \left(\bigcap_{k=1}^{\infty} C_k\right) \times \left(\bigcap_{k=1}^{\infty} C_k\right)
+      \end{aligned}
+    \end{equation*}
+    we have
+    \begin{equation*}
+      \begin{aligned}
+        x\in C_k, \forall k \in \mathbb{N},\\
+        y\in C_k, \forall k \in \mathbb{N}.
+      \end{aligned}
+    \end{equation*}
+    By the definition of Cartesian product, this implies that
+    \begin{equation*}
+      \begin{aligned}
+        (x,y)\in C_k \times C_k, \forall k \in \mathbb{N}.
+      \end{aligned}
+    \end{equation*}
+    Thus, \((x,y)\in \bigcap_{k=1}^{\infty} C_k \times C_k \)  since it satisfies the definition of intersection.
+
+    Therefore, we can conclude that the two sets are equal:
+
+    \begin{equation*}
+      \begin{aligned}
+        \bigcap_{k=1}^{\infty} C_k \times C_k =  \left(\bigcap_{k=1}^{\infty} C_k\right) \times \left(\bigcap_{k=1}^{\infty} C_k\right) .
+      \end{aligned}
+    \end{equation*}
+
+
+
+
+ 
+
+  \end{solution}
+  
   \pagebreak
 
 
@@ -65,7 +171,7 @@
 
     Construct a subset of $[0, 1]$ in the same manner as the Cantor set by
     removing from each remaining interval a subinterval of relative length
-    $θ, 0 < θ < 1$. Show that the resulting set is perfect and has measure zero.
+    $\theta, 0 < \theta < 1$. Show that the resulting set is perfect and has measure zero.
   
   \end{Problem}
 
