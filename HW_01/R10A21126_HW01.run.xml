@@ -44,10 +44,10 @@
   <internal package="biblatex" priority="9" active="1">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>R10A21126_HW04.bcf</file>
+      <file>R10A21126_HW01.bcf</file>
     </provides>
     <requires type="dynamic">
-      <file>R10A21126_HW04.bbl</file>
+      <file>R10A21126_HW01.bbl</file>
     </requires>
     <requires type="static">
       <file>blx-dm.def</file>
@@ -65,19 +65,19 @@
     <generic>biber</generic>
     <cmdline>
       <binary>biber</binary>
-      <infile>R10A21126_HW04</infile>
+      <infile>R10A21126_HW01</infile>
     </cmdline>
     <input>
-      <file>R10A21126_HW04.bcf</file>
+      <file>R10A21126_HW01.bcf</file>
     </input>
     <output>
-      <file>R10A21126_HW04.bbl</file>
+      <file>R10A21126_HW01.bbl</file>
     </output>
     <provides type="dynamic">
-      <file>R10A21126_HW04.bbl</file>
+      <file>R10A21126_HW01.bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>R10A21126_HW04.bcf</file>
+      <file>R10A21126_HW01.bcf</file>
     </requires>
     <requires type="editable">
       <file>R10A21126.bib</file>
