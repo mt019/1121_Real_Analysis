@@ -1,0 +1,70 @@
+\documentclass[UTF8,a4paper,10pt]{article}
+
+\input{preamble.tex}
+
+\begin{document}
+
+% Q1
+
+  \begin{Problem}[]{Zygmund p58 exercise 01}
+
+    (a) There is an analogue for bases different from 10 of usual decimal expansion of number. If $b$ is an integer larger than 1 and $0 < x < 1$,
+    show that there exist integral coefficient $c_k$, $0 \leq c_k < b$, such that $x = \sum_{k=1}^{\infty}c_k b^{-k}$. Furthermore, show that expansion is unique unless
+    $x = cb^{-k}$
+    , in which case there are two expansions.  
+
+
+    (b) When $b = 3$, the expansion is called the triadic or ternary
+    expansion of $x$. Show that Canter set consist of point in $[0,1]$ which has triadic representation such that $c_k$ is either 0 or 2, namely,
+    \begin{equation*}
+      \begin{aligned}
+        \mathcal{C}  = \{x \in [0, 1] : x =\sum_{k=1}^{\infty}c_k 3^{-k}
+, c_k \in \{0, 2\}\}
+      \end{aligned}
+    \end{equation*}
+  \end{Problem}
+
+  \begin{mybox}{Random Walks on Graphs}
+    We define the following terms\footcite[][133]{motwani95}:
+\begin{definition}[Hitting time]
+  % Hitting time  \(h_{uv}\)
+  The hitting time \(h_{uv}\) (sometimes called the mean first passage time) is the expected number of steps in a random walk that starts at \(u\) and ends upon first reaching \(v\).
+\end{definition}
+\begin{definition}[Commute time]
+  We define \(C_{uv}\), the commute time between \(u\) and \(v\), to be \(C_{uv} = h_{uv}+h_{vu} = C_{vu}\). This is the expected time for a random walk starting at \(u\) to return to \(u\) after at least one visit to \(v\).
+\end{definition}
+\begin{definition}[Cover time]
+  Let \(C_u(G)\) denote the expected length of a walk that starts at \(u\) and ends upon visiting every vertex in \(G\) at least once. The cover time of \(G\), denoted \(C(G)\), is defined by \(C(G) = \max_u C_u(G)\).
+\end{definition}
+% \dotfill
+  \end{mybox}
+
+
+  \begin{solution}
+
+    \begin{equation*}
+      \begin{aligned}
+        mR(G) \leq C(G) \leq 32mR(G) \log_2 n + 1.
+      \end{aligned}
+    \end{equation*}
+ 
+
+  \end{solution}
+
+
+  \begin{Problem}[]{Zygmund p58 exercise 03}
+
+    Construct a two-dimensional Cantor set in the unit square $\{(x, y) : 0 \leq x, y \leq 1\}$ as follows. Subdivide the square into nine equal parts and keep only the four closed corner squares, removing the remaining region (which forms a cross). Then repeat this process in a suitably scaled version for the remaining squares, ad infinitum. Show that the resulting set is perfect, has plane measure zero, and equals $\mathcal{C} \times \mathcal{C} $
+  
+  \end{Problem}
+
+
+  \begin{Problem}[]{Zygmund p59 exercise 04}
+
+    Construct a subset of $[0, 1]$ in the same manner as the Cantor set by
+    removing from each remaining interval a subinterval of relative length
+    $θ, 0 < θ < 1$. Show that the resulting set is perfect and has measure zero.
+  
+  \end{Problem}
+
+\end{document}
