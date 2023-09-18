@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.7.1)  18 SEP 2023 00:14
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.7.1)  19 SEP 2023 01:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1254,50 +1254,37 @@ Package biblatex Info: Automatic encoding selection.
 \openout5 = `R10A21126_HW01.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'R10A21126_HW01.bbl' not found.
-
-No file R10A21126_HW01.bbl.
+Package biblatex Info: ... file 'R10A21126_HW01.bbl' found.
+ (./R10A21126_HW01.bbl)
 Package biblatex Info: Reference section=0 on input line 5.
 Package biblatex Info: Reference segment=0 on input line 5.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 11.
-(/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 11.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
+) [1
 
-LaTeX Warning: Citation 'motwani95' on page 1 undefined on input line 28.
-
-[1
-
-] [2] [3] [4] 
+] [2] [3] [4] [5] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./R10A21126_HW01.aux)
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `R10A21126_HW01.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                R10A21126_HW01
-(biblatex)                and rerun LaTeX afterwards.
-
 Package logreq Info: Writing requests to 'R10A21126_HW01.run.xml'.
 \openout1 = `R10A21126_HW01.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 43747 strings out of 476683
- 944006 string characters out of 5804048
- 1869018 words of memory out of 5000000
- 63315 multiletter control sequences out of 15000+600000
+ 43796 strings out of 476683
+ 945061 string characters out of 5804048
+ 1885018 words of memory out of 5000000
+ 63362 multiletter control sequences out of 15000+600000
  519537 words of font info for 73 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 104i,12n,107p,683b,3846s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 104i,12n,107p,683b,5328s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on R10A21126_HW01.pdf (4 pages).
+Output written on R10A21126_HW01.pdf (5 pages).

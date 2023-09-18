@@ -18,25 +18,90 @@
     expansion of $x$. Show that Canter set consist of point in $[0,1]$ which has triadic representation such that $c_k$ is either 0 or 2, namely,
     \begin{equation*}
       \begin{aligned}
-        \mathcal{C}  = \{x \in [0, 1] : x =\sum_{k=1}^{\infty}c_k 3^{-k}
-, c_k \in \{0, 2\}\}
+        \mathcal{C}  = \{x \in [0, 1] : x =\sum_{k=1}^{\infty}c_k 3^{-k}, c_k \in \{0, 2\}\}.
       \end{aligned}
     \end{equation*}
   \end{Problem}
 
-  \begin{mybox}{Random Walks on Graphs}
-    We define the following terms\footcite[][133]{motwani95}:
-\begin{definition}[Hitting time]
-  % Hitting time  \(h_{uv}\)
-  The hitting time \(h_{uv}\) (sometimes called the mean first passage time) is the expected number of steps in a random walk that starts at \(u\) and ends upon first reaching \(v\).
-\end{definition}
-\begin{definition}[Commute time]
-  We define \(C_{uv}\), the commute time between \(u\) and \(v\), to be \(C_{uv} = h_{uv}+h_{vu} = C_{vu}\). This is the expected time for a random walk starting at \(u\) to return to \(u\) after at least one visit to \(v\).
-\end{definition}
-\begin{definition}[Cover time]
-  Let \(C_u(G)\) denote the expected length of a walk that starts at \(u\) and ends upon visiting every vertex in \(G\) at least once. The cover time of \(G\), denoted \(C(G)\), is defined by \(C(G) = \max_u C_u(G)\).
-\end{definition}
-% \dotfill
+  \begin{mybox}{Cantor Set}
+    \footcite[][42-43]{Wheeden_Zygmund_2015}Consider the closed interval \([0, 1]\). The first stage of the construction is to
+subdivide \([0, 1]\) into thirds and remove the interior of the middle third; that
+is, remove the open interval \(\left(\frac{1}{3},\frac{2}{3}\right)\). Each successive step of the construction is essentially the same. Thus, at the second stage, we subdivide each of the
+remaining two intervals \(\left[0,\frac{1}{3}\right]\)
+and  \(\left[\frac{2}{3},1\right]\) into thirds and remove the interiors, \(\left(\frac{1}{9},\frac{2}{9}\right)\) and \(\left(\frac{7}{9},\frac{8}{9}\right)\)
+, of their middle thirds. We continue the construction for each of the remaining intervals. The subset of [0, 1] that remains after infinitely many such operations is
+called the Cantor set \(C\): thus, if \(C_k\) denotes the union of the intervals left at the
+kth stage, then
+\begin{equation*}
+  \begin{aligned}
+    C =  \bigcap_{k=1}^{\infty} C_k  .
+  \end{aligned}
+\end{equation*}
+
+  \end{mybox}
+
+  \begin{mybox}{Limit Point}
+
+ 
+    A point \(x\) is a limit point of the set \(E\) if every neighborhood of \(x\)
+contains a point \(x\neq y\) such that \(y\in E\).\footcite[][32]{rudin1976principles}  
+
+
+In other words, \(x\) is a limit point of \(E\) if \(\exists\) a sequence \(\{x_n\}\in E\), s.t. \(x_n\to x\) and \(x_n\neq x\).    \footcite[][3-4]{Wheeden_Zygmund_2015} 
+  \end{mybox}
+
+  \begin{mybox}{Perfect Set}
+
+
+    A closed set \(E\) is said to be a perfect set if every point of \(E\) is a limit point of \(E\).    \footcite[][7]{Wheeden_Zygmund_2015}
+
+    In other words, A closed set \(E\) is said to be a perfect set if \(\forall x\in E, \forall \epsilon>0, (B(x,\epsilon)\setminus \{x\})\cap E\neq \emptyset \).
+
+  \end{mybox}
+
+
+  \begin{mybox}{Theorem 1.7}
+    \begin{enumerate}[label=(\roman*)]
+      \item The intersection of any number of closed sets is closed.
+      \item The union of any number of open sets is open.
+    \end{enumerate}
+  \end{mybox}
+
+
+
+  \begin{mybox}{Cantor Set is perfect}
+    To prove that Cantor Set \(C\) is a perfect set, we need to show that it is closed and every point in the set is a limit point of the set.
+
+    Since each \(C_k\) is closed, it follows from Theorem 1.7 that \(C\) is closed. 
+
+    Then show that every point in \(C\) is a limit point of the set:
+
+    Case 1. Let \(x\in C\) be an endpoint of \(I_k\subseteq C_k\). Consider the intervals \(I_k^i\ \subseteq C_{k+i}\) with endpoint \(x\), let \(x_1\) be the other endpoint of \(I_k^1\subseteq C_{k+1}\), \(x_2\) be the other endpoint of \(I_k^2\subseteq C_{k+2}\),..., \(x_n\) be the other endpoint of \(I_k^n
+    \subseteq C_{k+n}\).
+
+    We have 
+    \begin{equation*}
+      \begin{aligned}
+        x_n\to x,\\
+        x_n \neq x,\\
+        x_n \in C.
+      \end{aligned}
+    \end{equation*}
+    Thus, \(x\) is a limit point of \(C\).
+
+    Case 2. Suppose \(x\in C\) is not an endpoint of any interval consisting \(C\). \(\forall n\in\mathbb{N}\), we have \(x\in (a_n, b_n)\), where \(a_n\in C\) and \(|a_n-x|<(\frac{1}{3})^{n}\). Let \(x_n = a_n\), \(\{x_n\}\) is the squence s.t. 
+    \begin{equation*}
+      \begin{aligned}
+        x_n\to x,\\
+        x_n \neq x,\\
+        x_n \in C.
+      \end{aligned}
+    \end{equation*}
+    Thus, \(x\) is a limit point of \(C\).
+
+    We can conclude that every point in \(C\) is a limit point of the set. Therefore, \(C\) is perfect.
+
+    
   \end{mybox}
 
 
@@ -44,7 +109,6 @@
 
     \begin{equation*}
       \begin{aligned}
-        mR(G) \leq C(G) \leq 32mR(G) \log_2 n + 1.
       \end{aligned}
     \end{equation*}
  
@@ -63,19 +127,11 @@
   \begin{solution}\,\\
     Let \(D_0\) be the unit square \(\{(x,y): 0\leq (x,y)\leq 1\}\). Let \(D_k\) be the set remaining after \(i\) steps. Let \(D = \bigcap_{k=1}^{\infty} D_k \) be the resulting set.
 
-    
+  
 
-    (a) To prove that it is a perfect set, we need to show that every point in the set is a limit point of the set.
-    \begin{mybox}{Theorem 1.7}
-      \begin{enumerate}[label=(\roman*)]
-        \item The intersection of any number of closed sets is closed.
-        \item The union of any number of open sets is open.
-      \end{enumerate}
-    \end{mybox}
-    Since each \(D_k\) is closed, it follows from Theorem 1.7 that \(D\) is closed. Note that \(D_k\) consists of \(4^k\) closed disjoint intervals, each of which 
+    (a) Show that \(D\) has plane measure
+    zero:
 
-
-    (b)\\
     Since \(D\) is covered by the intervals in any \(D_k\), we have
     \begin{equation*}
       \begin{aligned}
@@ -85,10 +141,13 @@
     Let \(k\to\infty\), we have \(\left\lvert D\right\rvert_e = 0\).
 
 
-    (c)
+    (b)
     \begin{equation*}
       \begin{aligned}
-        D := \bigcap_{k=1}^{\infty} D_k := \bigcap_{k=1}^{\infty} C_k \times C_k =  \left(\bigcap_{k=1}^{\infty} C_k\right) \times \left(\bigcap_{k=1}^{\infty} C_k\right) = C\times C.
+        D &:= \bigcap_{k=1}^{\infty} D_k &\text{(By definition}\\
+        &= \bigcap_{k=1}^{\infty} C_k \times C_k &\text{(By definition}\\
+        &=  \left(\bigcap_{k=1}^{\infty} C_k\right) \times \left(\bigcap_{k=1}^{\infty} C_k\right) &\text{(To be proved}\\
+        &= C\times C&\text{(By definition}.
       \end{aligned}
     \end{equation*}
 
@@ -124,9 +183,16 @@ For all
     Therefore,
     \begin{equation*}
       \begin{aligned}
-        (x,y)\in \left(\bigcap_{k=1}^{\infty} C_k\right) \times \left(\bigcap_{k=1}^{\infty} C_k\right),\forall (x,y)\in D.
+        (x,y)\in \left(\bigcap_{k=1}^{\infty} C_k\right) \times \left(\bigcap_{k=1}^{\infty} C_k\right),\forall (x,y)\in D,
       \end{aligned}
     \end{equation*}
+    which means
+    \begin{equation*}
+      \begin{aligned}
+        \bigcap_{k=1}^{\infty} C_k \times C_k \subseteq  \left(\bigcap_{k=1}^{\infty} C_k\right) \times \left(\bigcap_{k=1}^{\infty} C_k\right).
+      \end{aligned}
+    \end{equation*}
+
 
     Next, prove the inclusion from right to left. For all
     \begin{equation*}
@@ -147,7 +213,14 @@ For all
         (x,y)\in C_k \times C_k, \forall k \in \mathbb{N}.
       \end{aligned}
     \end{equation*}
-    Thus, \((x,y)\in \bigcap_{k=1}^{\infty} C_k \times C_k \)  since it satisfies the definition of intersection.
+    Since it satisfies the definition of intersection,we have \((x,y)\in \bigcap_{k=1}^{\infty} C_k \times C_k \), implying that 
+    \begin{equation*}
+      \begin{aligned}
+        \left(\bigcap_{k=1}^{\infty} C_k\right) \times \left(\bigcap_{k=1}^{\infty} C_k\right) \subseteq \bigcap_{k=1}^{\infty} C_k \times C_k .
+      \end{aligned}
+    \end{equation*}
+    
+
 
     Therefore, we can conclude that the two sets are equal:
 
@@ -157,6 +230,14 @@ For all
       \end{aligned}
     \end{equation*}
 
+    (c) To prove that it is a perfect set, we need to show that every point in the set is a limit point of the set.
+    \begin{mybox}{Theorem 1.7}
+      \begin{enumerate}[label=(\roman*)]
+        \item The intersection of any number of closed sets is closed.
+        \item The union of any number of open sets is open.
+      \end{enumerate}
+    \end{mybox}
+    Since each \(D_k\) is closed, it follows from Theorem 1.7 that \(D\) is closed. Note that \(D_k\) consists of \(4^k\) closed disjoint intervals, each of which 
 
 
 
@@ -174,5 +255,40 @@ For all
     $\theta, 0 < \theta < 1$. Show that the resulting set is perfect and has measure zero.
   
   \end{Problem}
+
+
+  (a) To prove that the set \(C'\) is a perfect set, we need to show that it is closed and every point in the set is a limit point of the set.
+
+  Since each \(C'_k\) is closed, it follows from Theorem 1.7 that \(C'\) is closed. 
+
+  Then show that every point in \(C'\) is a limit point of the set:
+
+  C'ase 1. Let \(x\in C'\) be an endpoint of \(I_k\subseteq C'_k\). C'onsider the intervals \(I_k^i\ \subseteq C'_{k+i}\) with endpoint \(x\), let \(x_1\) be the other endpoint of \(I_k^1\subseteq C'_{k+1}\), \(x_2\) be the other endpoint of \(I_k^2\subseteq C'_{k+2}\),..., \(x_n\) be the other endpoint of \(I_k^n
+  \subseteq C'_{k+n}\).
+
+  We have 
+  \begin{equation*}
+    \begin{aligned}
+      x_n\to x,\\
+      x_n \neq x,\\
+      x_n \in C'.
+    \end{aligned}
+  \end{equation*}
+  Thus, \(x\) is a limit point of \(C'\).
+
+  C'ase 2. Suppose \(x\in C'\) is not an endpoint of any interval consisting \(C'\). \(\forall n\in\mathbb{N}\), we have \(x\in (a_n, b_n)\), where \(a_n\in C'\) and \(|a_n-x|<(\frac{1-\theta}{2})^{n}\). Let \(x_n = a_n\), \(\{x_n\}\) is the squence s.t. 
+  \begin{equation*}
+    \begin{aligned}
+      x_n\to x,\\
+      x_n \neq x,\\
+      x_n \in C'.
+    \end{aligned}
+  \end{equation*}
+  Thus, \(x\) is a limit point of \(C'\).
+
+  We can conclude that every point in \(C'\) is a limit point of the set. Therefore, \(C'\) is perfect.
+
+
+
 
 \end{document}
