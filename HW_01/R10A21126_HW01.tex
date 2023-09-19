@@ -23,6 +23,25 @@
     \end{equation*}
   \end{Problem}
 
+  \begin{solution}\,\\
+
+    (a)
+
+    \begin{algorithm}[H]
+      % \caption{Example Algorithm with a For Loop}
+      \KwData{\(x, b\)}
+      \KwResult{\(\{c_k\}_{k=1}^\infty\)}
+      initialization\;
+      \For{\(n=1,2,\ldots,\infty\) }{
+        Let \(c_n\) to be the largest integral coefficient, s.t. \( \sum_{k=1}^{n}c_k b^{-k}\leq x\)\;
+      }
+      \Return{\(\{c_k\}_{k=1}^\infty\)}\;
+    \end{algorithm}
+  \end{solution}
+
+  \(\vdots\)
+
+\pagebreak
   \begin{mybox}{Cantor Set}
     \footcite[][42-43]{Wheeden_Zygmund_2015}Consider the closed interval \([0, 1]\). The first stage of the construction is to
 subdivide \([0, 1]\) into thirds and remove the interior of the middle third; that
@@ -105,16 +124,8 @@ In other words, \(x\) is a limit point of \(E\) if \(\exists\) a sequence \(\{x_
   \end{mybox}
 
 
-  \begin{solution}
 
-    \begin{equation*}
-      \begin{aligned}
-      \end{aligned}
-    \end{equation*}
- 
-
-  \end{solution}
-  \pagebreak
+  % \pagebreak
 
 
   \begin{Problem}[]{Zygmund p58 exercise 03}
@@ -147,11 +158,11 @@ In other words, \(x\) is a limit point of \(E\) if \(\exists\) a sequence \(\{x_
         D &:= \bigcap_{k=1}^{\infty} D_k &\text{(By definition}\\
         &= \bigcap_{k=1}^{\infty} C_k \times C_k &\text{(By definition}\\
         &=  \left(\bigcap_{k=1}^{\infty} C_k\right) \times \left(\bigcap_{k=1}^{\infty} C_k\right) &\text{(To be proved}\\
-        &= C\times C&\text{(By definition}.
+        &= C\times C. &\text{(By definition}
       \end{aligned}
     \end{equation*}
 
-    To prove that \(\bigcap_{k=1}^{\infty} C_k \times C_k = \left(\bigcap_{k=1}^{\infty} C_k\right) \times \left(\bigcap_{k=1}^{\infty} C_k\right) \), start with the inclusion from left to right:
+    To prove that \(\bigcap_{k=1}^{\infty} C_k \times C_k = \left(\bigcap_{k=1}^{\infty} C_k\right) \times \left(\bigcap_{k=1}^{\infty} C_k\right)\), first show that \(\bigcap_{k=1}^{\infty} C_k \times C_k \subseteq \left(\bigcap_{k=1}^{\infty} C_k\right) \times \left(\bigcap_{k=1}^{\infty} C_k\right)\):
 
 For all
     \begin{equation*}
@@ -194,7 +205,7 @@ For all
     \end{equation*}
 
 
-    Next, prove the inclusion from right to left. For all
+    Next, prove that \(\left(\bigcap_{k=1}^{\infty} C_k\right) \times \left(\bigcap_{k=1}^{\infty} C_k\right) \subseteq \bigcap_{k=1}^{\infty} C_k \times C_k\). For all
     \begin{equation*}
       \begin{aligned}
           (x,y)\in \left(\bigcap_{k=1}^{\infty} C_k\right) \times \left(\bigcap_{k=1}^{\infty} C_k\right)
@@ -234,6 +245,39 @@ For all
     
     Since \(C\) is perfect, \(D=C\times C\) is perfect, by the property of perfect set.
 
+    \begin{mybox}{Cartesian product of two perfect sets}
+
+      To prove that the Cartesian product of two perfect sets in \(\mathbb{R}\) is a perfect set in \(\mathbb{R} ^2\):
+
+      Let \(E_1\) and \(E_2\) be perfect sets in \(\mathbb{R}\), consider \(E=E_1\times E_2\), which is the product of \(E_1\) and \(E_2\).
+
+      Since both \(E_1\) and \(E_2\) are perfect sets, they are closed in \(\mathbb{R}\). The product of two closed sets is also closed. Thus, \(E=E_1\times E_2\) is closed in \(\mathbb{R}^2\).
+
+      Suppose \((x,y)\in E=E_1\times E_2\), by definition, \(x\in E_1\), and \(y\in E_2\). Since both \(E_1\) and \(E_2\) are perfect sets, every point in the set is the limit point of the set respectively. In other words, \(\forall x \in E_1\), we have a sequence \(\{x_n\}\) s.t. 
+      \[x_n\to x,
+      x_n\neq x,
+      x_n\in E_1.\]
+
+      Similarly, \(\forall y \in E_2\), we have a sequence \(\{y_n\}\) s.t. 
+      \begin{equation*}
+        \begin{aligned}
+          y_n \to y, y_n \neq y, y_n \in E_2.
+        \end{aligned}
+      \end{equation*}
+      Thus, \(\forall (x,y)\in E=E_1\times E_2\), we have a sequence \(\{(x_n, y_n)\}\) s.t. 
+      \begin{equation*}
+        \begin{aligned}
+          (x_n, y_n)&\to (x,y),\\
+          (x_n, y_n)&\neq (x,y),\\
+          (x_n, y_n)&\in E.
+        \end{aligned}
+      \end{equation*}
+      This means that every point in \(E\) is a limit point of \(E\). Hence, we can conclude that \(E\) is perfect. 
+      
+      It is proved that the product of two perfect sets in \(\mathbb{R}\) is a perfect set.
+
+    \end{mybox}
+
 
  
 
@@ -271,7 +315,7 @@ $k$-th stage, then the resulting set is
   \subseteq C'_{k+n}\).
   Thus, \(|x_n-x|=(\frac{1}{3})^{k+n}\).
 
-  We have the squence\(\{x_n\}\) s.t. 
+  We have the squence \(\{x_n\}\) s.t. 
   \begin{equation*}
     \begin{aligned}
       x_n&\to x,\\

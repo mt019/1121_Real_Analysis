@@ -1,7 +1,9 @@
 % \documentclass[UTF8,a4paper,14pt]{article}
 % \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
-\usepackage{algorithm,algorithmic}
+% \usepackage{algorithm,algorithmic}
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+
 % \usepackage{algorithmicx}
 % \usepackage{algpseudocode}
 \usepackage{hyperref}
@@ -189,3 +191,10 @@ doi = false, isbn=false,]{biblatex}
 \usepackage{graphicx}
 \graphicspath{ {images/} }
 \usepackage{caption}
+
+% global change
+\SetKwInput{KwData}{Input}
+\SetKwInput{KwResult}{Output}
+% https://tex.stackexchange.com/questions/299771/how-do-i-rename-data-from-kwdata-and-result-from-kwresult-in-begi
+
+\hypersetup{hidelinks}
