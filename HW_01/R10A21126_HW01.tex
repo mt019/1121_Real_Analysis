@@ -31,7 +31,7 @@ remaining two intervals \(\left[0,\frac{1}{3}\right]\)
 and  \(\left[\frac{2}{3},1\right]\) into thirds and remove the interiors, \(\left(\frac{1}{9},\frac{2}{9}\right)\) and \(\left(\frac{7}{9},\frac{8}{9}\right)\)
 , of their middle thirds. We continue the construction for each of the remaining intervals. The subset of [0, 1] that remains after infinitely many such operations is
 called the Cantor set \(C\): thus, if \(C_k\) denotes the union of the intervals left at the
-kth stage, then
+$k$-th stage, then
 \begin{equation*}
   \begin{aligned}
     C =  \bigcap_{k=1}^{\infty} C_k  .
@@ -76,8 +76,8 @@ In other words, \(x\) is a limit point of \(E\) if \(\exists\) a sequence \(\{x_
 
     Then show that every point in \(C\) is a limit point of the set:
 
-    Case 1. Let \(x\in C\) be an endpoint of \(I_k\subseteq C_k\). Consider the intervals \(I_k^i\ \subseteq C_{k+i}\) with endpoint \(x\), let \(x_1\) be the other endpoint of \(I_k^1\subseteq C_{k+1}\), \(x_2\) be the other endpoint of \(I_k^2\subseteq C_{k+2}\),..., \(x_n\) be the other endpoint of \(I_k^n
-    \subseteq C_{k+n}\).
+    Case 1. Let \(x\in C\) be an endpoint of the interval \(I_k\subseteq C_k\). Consider the intervals \(I_k^i\ \subseteq C_{k+i}\) with endpoint \(x\), let \(x_1\) be the other endpoint of \(I_k^1\subseteq C_{k+1}\), \(x_2\) be the other endpoint of \(I_k^2\subseteq C_{k+2}\),..., \(x_n\) be the other endpoint of \(I_k^n \subseteq C_{k+n}\). 
+    Thus, \(|x_n-x|=(\frac{1}{3})^{k+n}\).
 
     We have 
     \begin{equation*}
@@ -87,7 +87,7 @@ In other words, \(x\) is a limit point of \(E\) if \(\exists\) a sequence \(\{x_
         x_n \in C.
       \end{aligned}
     \end{equation*}
-    Thus, \(x\) is a limit point of \(C\).
+    Therefore, \(x\) is a limit point of \(C\).
 
     Case 2. Suppose \(x\in C\) is not an endpoint of any interval consisting \(C\). \(\forall n\in\mathbb{N}\), we have \(x\in (a_n, b_n)\), where \(a_n\in C\) and \(|a_n-x|<(\frac{1}{3})^{n}\). Let \(x_n = a_n\), \(\{x_n\}\) is the squence s.t. 
     \begin{equation*}
@@ -230,15 +230,9 @@ For all
       \end{aligned}
     \end{equation*}
 
-    (c) To prove that it is a perfect set, we need to show that every point in the set is a limit point of the set.
-    \begin{mybox}{Theorem 1.7}
-      \begin{enumerate}[label=(\roman*)]
-        \item The intersection of any number of closed sets is closed.
-        \item The union of any number of open sets is open.
-      \end{enumerate}
-    \end{mybox}
-    Since each \(D_k\) is closed, it follows from Theorem 1.7 that \(D\) is closed. Note that \(D_k\) consists of \(4^k\) closed disjoint intervals, each of which 
-
+    (c) Prove that it is a perfect set:
+    
+    Since \(C\) is perfect, \(D=C\times C\) is perfect, by the property of perfect set.
 
 
  
@@ -256,6 +250,16 @@ For all
   
   \end{Problem}
 
+  \begin{solution}\,
+
+  If \(C'_k\) denotes the union of the intervals left at the
+$k$-th stage, then the resulting set is
+\begin{equation*}
+  \begin{aligned}
+    C' =  \bigcap_{k=1}^{\infty} C'_k  .
+  \end{aligned}
+\end{equation*}
+
 
   (a) To prove that the set \(C'\) is a perfect set, we need to show that it is closed and every point in the set is a limit point of the set.
 
@@ -263,32 +267,45 @@ For all
 
   Then show that every point in \(C'\) is a limit point of the set:
 
-  Case 1. Let \(x\in C'\) be an endpoint of \(I_k\subseteq C'_k\). C'onsider the intervals \(I_k^i\ \subseteq C'_{k+i}\) with endpoint \(x\), let \(x_1\) be the other endpoint of \(I_k^1\subseteq C'_{k+1}\), \(x_2\) be the other endpoint of \(I_k^2\subseteq C'_{k+2}\),..., \(x_n\) be the other endpoint of \(I_k^n
+  Case 1. Let \(x\in C'\) be an endpoint of \(I_k\subseteq C'_k\). Consider the intervals \(I_k^i\ \subseteq C'_{k+i}\) with endpoint \(x\), let \(x_1\) be the other endpoint of \(I_k^1\subseteq C'_{k+1}\), \(x_2\) be the other endpoint of \(I_k^2\subseteq C'_{k+2}\),..., \(x_n\) be the other endpoint of \(I_k^n
   \subseteq C'_{k+n}\).
+  Thus, \(|x_n-x|=(\frac{1}{3})^{k+n}\).
 
-  We have 
+  We have the squence\(\{x_n\}\) s.t. 
   \begin{equation*}
     \begin{aligned}
-      x_n\to x,\\
-      x_n \neq x,\\
-      x_n \in C'.
+      x_n&\to x,\\
+      x_n&\neq x,\\
+      x_n&\in C'.
     \end{aligned}
   \end{equation*}
-  Thus, \(x\) is a limit point of \(C'\).
+  Therefore, \(x\) is a limit point of \(C'\).
 
-  Case 2. Suppose \(x\in C'\) is not an endpoint of any interval consisting \(C'\). \(\forall n\in\mathbb{N}\), we have \(x\in (a_n, b_n)\), where \(a_n\in C'\) and \(|a_n-x|<(\frac{1-\theta}{2})^{n}\). Let \(x_n = a_n\), \(\{x_n\}\) is the squence s.t. 
+  Case 2. Suppose \(x\in C'\) is not an endpoint of any interval consisting \(C'\). \(\forall n\in\mathbb{N}\), we have \(x\in (a_n, b_n)\), where \(a_n\in C'\) and \(|a_n-x|<(\frac{1-\theta}{2})^{n}\). Let \(x_n = a_n\), then \(\{x_n\}\) is the squence s.t. 
   \begin{equation*}
     \begin{aligned}
-      x_n\to x,\\
-      x_n \neq x,\\
-      x_n \in C'.
+      x_n&\to x,\\
+      x_n&\neq x,\\
+      x_n&\in C'.
     \end{aligned}
   \end{equation*}
   Thus, \(x\) is a limit point of \(C'\).
 
   We can conclude that every point in \(C'\) is a limit point of the set. Therefore, \(C'\) is perfect.
 
+  \dotfill
 
+  (b) Show that \(C'\) has plane measure
+  zero:
 
+  Since \(C'\) is covered by the intervals in any \(C'_k\), we have
+  \begin{equation*}
+    \begin{aligned}
+      \left\lvert C'\right\rvert_e \leq \left\lvert C'_k \right\rvert_e = \left(1-\theta\right)^{k}.
+    \end{aligned}
+  \end{equation*}
+  Let \(k\to\infty\), we have \(\left\lvert C'\right\rvert_e = 0\).
+
+\end{solution}
 
 \end{document}
