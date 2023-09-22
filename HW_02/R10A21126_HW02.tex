@@ -1,0 +1,76 @@
+\documentclass[UTF8,a4paper,10pt]{article}
+
+\input{preamble.tex}
+
+\begin{document}
+
+
+\begin{mybox}{Lebesgue Measurable Sets}
+
+  
+\footcite[][45-46]{Wheeden_Zygmund_2015}  
+A subset \(E\) of \(\mathbb{R}^n\) is said to be \textit{Lebesgue measurable}, or simply \textit{measurable}, if
+  given \(\epsilon > 0\), there exists an open set \(G\) such that
+  \begin{equation*}
+    \begin{aligned}
+      E \subset G \text{ and } |G-E|_e < \epsilon.
+    \end{aligned}
+  \end{equation*}
+
+  If \(E\) is measurable, its outer measure is called its \textit{Lebesgue measure}, or simply its \textit{measure}, and denoted \(|E|\):
+  \begin{equation*}
+    \begin{aligned}
+      |E| = |E|_e, \text{ for measurable } E.
+    \end{aligned}
+  \end{equation*}
+
+  The condition that \(E\) be measurable should not be confused with the conclusion of Theorem 3.6, which states that there exists an open \(G\) containing \(E\)
+such that \(|G|_e \leq |E|_e + \epsilon\). In general, since \(G = E \cup (G − E)\) when \(E ⊂ G\), we only have \(|G|_e \leq |E|_e + |G − E|_e\), and we cannot conclude from \(|G|_e \leq |E|_e + \epsilon\) that \(|G-E|_e < \epsilon\).
+  
+
+
+
+\end{mybox}
+
+
+% Q1
+
+  \begin{Problem}[]{Zygmund p59 exercise 17}
+
+Give an example that shows that the image of a measurable set under
+a continuous transformation may not be measurable. (Consider the Cantor–Lebesgue function and the pre-image of an appropriate nonmeasurable subset of its range.) See also Exercise 10 of Chapter 7.
+
+  \end{Problem}
+
+
+
+  \begin{Problem}[]{Zygmund p60 exercise 25}
+
+    Construct a measurable subset \(E\) of \([0, 1]\) such that for every subinterval \(I\), both \(E \cap  I\) and \(I - E\) have positive measure. (Take a Cantor-type subset of \([0, 1]\) with positive measure [see Exercise 5], and on each subinterval of the complement of this set, construct another such set, and so on. The measures can be arranged so that the union of all the sets has the desired property.) See also Exercise 21 of Chapter 4.
+
+
+
+  \end{Problem}
+
+
+  \begin{Problem}[]{Zygmund p61 exercise 29}
+
+Let \(T : \mathbb{R}^n → \mathbb{R}^n\) be a linear transformation.
+
+(a) If \(T\) has matrix representation \((t_{ij})\) and \(t = (\Sigma_{i,j}t_{ij}^2)^{1/2}\) , show that \(|Tx - Ty| \leq t|x - y|\) for all \(x, y \in \mathbb{R}^n\). (Use (1.2).) The number \(t\) is called the \textit{Hilbert–Schmidt norm} of \((t_{ij})\).
+
+(b) Prove the fact mentioned at the end of the proof of Theorem 3.35 that \(|TE|_e = \delta|E|_e\) for every \(E \subset \mathbb{R}^n\), where \(\delta  = |\det T|\).
+
+  \end{Problem}
+
+  \begin{solution}\,\\
+
+        \begin{equation*}
+      \begin{aligned}
+      \end{aligned}
+    \end{equation*}
+
+  \end{solution}
+
+
+\end{document}
