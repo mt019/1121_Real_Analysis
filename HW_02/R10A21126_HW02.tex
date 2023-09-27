@@ -42,16 +42,66 @@ a continuous transformation may not be measurable. (Consider the Cantor–Lebesg
 
   \end{Problem}
 
-
+\pagebreak
 
   \begin{Problem}[]{Zygmund p60 exercise 25}
 
     Construct a measurable subset \(E\) of \([0, 1]\) such that for every subinterval \(I\), both \(E \cap  I\) and \(I - E\) have positive measure. (Take a Cantor-type subset of \([0, 1]\) with positive measure [see Exercise 5], and on each subinterval of the complement of this set, construct another such set, and so on. The measures can be arranged so that the union of all the sets has the desired property.) See also Exercise 21 of Chapter 4.
 
-
-
   \end{Problem}
 
+  \begin{solution}\,\\
+
+Construct a subset of \([0, 1]\) in the same manner as the Cantor set, except that at the \(k\)-th stage, each interval removed has length \(\delta 3^{-k}\), \(0 < \delta < 1\). Let \(F_k\) denote the union of the intervals left at the \(k\)-th stage.
+Now show that the resulting set (Fat Cantor Set) \(F = \bigcap_{k=1}^{\infty} F_k \) has positive measure \(1 - \delta\), and contains no intervals.
+
+By construction,
+\begin{equation*}
+  \begin{aligned}
+    |F_k| = 1 - \sum_{i=1}^{k} 2^{i-1}\delta(\frac{1}{3})^i.
+  \end{aligned}
+\end{equation*}
+Since
+\begin{equation*}
+  \begin{aligned}
+    0\leq|F|_e\leq|F_k|_e,
+  \end{aligned}
+\end{equation*}
+let \(k\to \infty\), we have 
+\begin{equation*}
+  \begin{aligned}
+    |F|_e = \lim_{k \to \infty}|F_k|_e = 1-\delta  .
+  \end{aligned}
+\end{equation*}
+
+Since \(F\) cannot contain an interval of length greater than \(1/2^k\) for all \(k\), so \(F\) contains no intervals. 
+
+---
+
+Therefore, we have
+\begin{equation*}
+  \begin{aligned}
+    |I\cap F^c| > 0,  \forall I\subseteq[0,1] .
+  \end{aligned}
+\end{equation*}
+However, by construction,
+\begin{equation*}
+  \begin{aligned}
+    \exists I\subseteq[0,1]\text{ s.t. }|I\cap F^c| > 0.
+  \end{aligned}
+\end{equation*}
+
+Construct another such set on each subinterval of the complement of F, and get the resulting set \(E\). Thus, \(E^c\) contains no intervals by construction. Therefore, \(\forall I\subseteq[0,1]\), we have
+\begin{equation*}
+  \begin{aligned}
+    |I\cap E| > 0,\\
+    |I\cap E^c| > 0.
+  \end{aligned}
+\end{equation*}
+
+    \end{solution}
+
+  \pagebreak
 
   \begin{Problem}[]{Zygmund p61 exercise 29}
 
@@ -63,14 +113,102 @@ Let \(T : \mathbb{R}^n → \mathbb{R}^n\) be a linear transformation.
 
   \end{Problem}
 
-  \begin{solution}\,\\
+  \begin{solution}\,
 
-        \begin{equation*}
+  (a)
+
+    The Cauchy-Schwarz inequality states that for any vectors \(x,y\), we have
+
+    \begin{equation*}
       \begin{aligned}
+        x\cdot y\leq |x||y|.
       \end{aligned}
     \end{equation*}
 
-  \end{solution}
+Let \(z=x-y\), and \(t_{i.}\) be the \(i\)-th row of the matrix of \(T\), thus we have \(\forall x,y \in\mathbb{R}^n\),
 
+    \begin{equation*}
+      \begin{aligned}
+        |Tx - Ty| 
+        &= |T(x-y)|\\
+        &= |Tz|\\ 
+        &= |\sum_{i=1}^{n} t_{i.}z| \\
+        &\leq |\sum_{i=1}^{n} |t_{i.}||z||\\     
+        &= |\sum_{i=1}^{n} (\sum_{j=1}^{n}t_{ij}^2)^{1/2}|z||\\
+        &\leq (\sum_{i,j=1}^{n}t_{ij}^2)^{1/2}|z|\\     
+        &= t|z| = t|x - y|. 
+      \end{aligned}
+    \end{equation*}
+
+    (b)
+
+    \begin{mybox}{Lebesgue Outer Measure}
+
+      \footcite[][41]{Wheeden_Zygmund_2015}  
+    We consider closed \(n\)-dimensional intervals \(I = \{x: a_j \leq x_j \leq b_j, j = 1,\ldots, n\}\) and their volumes \(v(I) = \prod_{j=1}^n(b_j - a_j)\). To define the outer measure of an arbitrary subset \(E\) of \(\mathbb{R}^n\), cover \(E\) by a \textit{countable} collection \(S\) of intervals \(I_k\), and let 
+    \[\sigma(S) = \sum_{I_k\in S} v(I_k).\]
+
+The Lebesgue outer measure (or exterior measure) of \(E\), denoted \(|E|_e\), is defined by
+\[|E|_e = \inf \sigma(S),\]
+where the infimum is taken over all such covers \(S\) of \(E\). Thus, \(0 \leq |E|_e \leq +\infty\).
+    \end{mybox}
+
+We can have a \textit{countable} collection \(S\) of intervals \(I_k\) be a cover of \(E\),
+
+    \begin{equation*}
+      \begin{aligned}
+        E \subseteq \bigcup_{I_k\in S} I_k,
+      \end{aligned}
+    \end{equation*}
+and 
+\begin{equation*}
+  \begin{aligned}
+    \epsilon +|E|_e = \sum_{I_k\in S} |I_k|_e, \forall \epsilon>0.
+  \end{aligned}
+\end{equation*}
+
+Since \(T\) is linear, we have
+
+\begin{equation*}
+  \begin{aligned}
+    T(E)\subseteq T(\bigcup_{I_k\in S} I_k),
+  \end{aligned}
+\end{equation*}
+and
+\begin{equation*}
+  \begin{aligned}
+    |T(E)|_e
+    &\leq |T(\bigcup I_k)|_e\\
+    &= \sum \delta |I_k|_e\\
+    &= \delta (|E|_e+\epsilon).
+  \end{aligned}
+\end{equation*}
+Let \(\epsilon\to 0\), \(|T(E)|_e\leq\delta|E|_e\)
+
+---
+
+Case 1. \(T\) is invertible, implying that \(\delta\neq0\). We have
+
+\begin{equation*}
+  \begin{aligned}
+    |T(E)|_e    &\leq \delta |E|_e\\
+    |T^{-1}(T(E))|_e    &\leq |\det(T^{-1})| |T(E)|_e\\
+    |E|_e    &\leq \delta^{-1} |T(E)|_e\\
+    |T(E)|_e    &\geq \delta |E|_e\\
+  \end{aligned}
+\end{equation*}
+
+Case 2. \(T\) is non-invertible, implying that \(\delta=0\). We have
+
+\begin{equation*}
+  \begin{aligned}
+    |T(E)|_e    = \delta |E|_e = 0.
+  \end{aligned}
+\end{equation*}
+
+Therefore we conclude that \(|TE|_e = \delta|E|_e\) for every \(E \subset \mathbb{R}^n\), where \(\delta  = |\det T|\).
+
+
+  \end{solution}
 
 \end{document}

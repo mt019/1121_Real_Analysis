@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.7.1)  26 SEP 2023 22:18
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.7.1)  27 SEP 2023 09:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1296,14 +1296,14 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 11.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 Missing character: There is no ⊂ (U+2282) in font [lmroman10-regular]:mapping=tex-text;!
+[1
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--67
+]
+Underfull \hbox (badness 10000) in paragraph at lines 53--54
 
  []
 
-[1
-
-] 
+[2] [3] [4] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./R10A21126_HW02.aux)
 Package rerunfilecheck Info: File `R10A21126_HW02.out' has not changed.
@@ -1313,12 +1313,12 @@ Package logreq Info: Writing requests to 'R10A21126_HW02.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 44571 strings out of 476683
- 959763 string characters out of 5804048
- 1878018 words of memory out of 5000000
- 64132 multiletter control sequences out of 15000+600000
+ 44575 strings out of 476683
+ 959824 string characters out of 5804048
+ 1866018 words of memory out of 5000000
+ 64136 multiletter control sequences out of 15000+600000
  519553 words of font info for 75 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 104i,11n,107p,683b,5325s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 104i,12n,107p,683b,5371s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on R10A21126_HW02.pdf (1 page).
+Output written on R10A21126_HW02.pdf (4 pages).
