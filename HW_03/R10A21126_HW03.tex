@@ -44,7 +44,7 @@
 
 (i)
 
-For every \(E\) closed subset in \(\mathbb{R}^n\), there is a \(\backslash E\) open subset \(\mathbb{R}^n\). By definition of the Borel \(\sigma\)-algebra \(\mathfrak{B}\), we have \(\backslash E \in \mathfrak{B}\), implying that \(E\in \mathfrak{B}\). Thus, \(\mathfrak{B}\) contains the closed sets in \(\mathbb{R}^n\).
+For every closed subset \(E \in\mathbb{R}^n\), there is a open subset \(\backslash E \in \mathbb{R}^n\). By definition of the Borel \(\sigma\)-algebra \(\mathfrak{B}\), we have \(\backslash E \in \mathfrak{B}\), implying that \(E\in \mathfrak{B}\). Thus, \(\mathfrak{B}\) contains the closed sets in \(\mathbb{R}^n\).
 
 (ii)
 
@@ -99,10 +99,10 @@ Therefore, we can conclude that the Borel \(\sigma\)-algebra \(\mathfrak{B}\)  i
 
   \begin{solution}
 
-  By the definition of the limit of a sequence, let \(\epsilon>0\), there exists \(N\) s.t. \(\forall n\geq N\),
+  By the definition of the limit of a sequence, let \(\epsilon>0\), there exists \(N\in \mathbb{N}\) s.t. \(\forall n\geq N\),
   \begin{equation*}
     \begin{aligned}
-      \sum_{k=n+1}^{\infty}|E_k|_e = \sum_{k=1}^{\infty}|E_k|_e - \sum_{k=n}^{\infty}|E_k|_e < \epsilon.
+      \sum_{k=n}^{\infty}|E_k|_e = \sum_{k=1}^{\infty}|E_k|_e - \sum_{k=1}^{n-1}|E_k|_e < \epsilon.
     \end{aligned}
   \end{equation*}
 Since
