@@ -10,10 +10,10 @@
 \begin{document}
 
 
-\begin{mybox}{}
+% \begin{mybox}{}
 
 
-\end{mybox}
+% \end{mybox}
   
 
   \begin{Problem}[]{
@@ -55,6 +55,7 @@
 
 
   \end{solution}
+  \pagebreak
 
   % Q2
 
@@ -84,8 +85,225 @@
 
   \begin{solution}\,
 
+    (a)
+
+    For any \(\alpha\in(0,1)\), let \(I\subseteq \R\) be an open set s.t. \(E\subseteq I\) and \(|E|_e \geq \alpha|I|_e\), implying that 
+  
+    \begin{equation*}
+      \begin{aligned}
+        \alpha |I|_e\leq |E|_e\leq |I|_e.
+      \end{aligned}
+    \end{equation*}
+
+    Write the open set \(I\) as a countable union of disjoint open intervals:
+    \begin{equation*}
+      \begin{aligned}
+        I = \bigsqcup_{k = 1}^{\infty}I_k.
+      \end{aligned}
+    \end{equation*}
+    Thus, 
+    \begin{equation*}
+      \begin{aligned}
+        E = E\bigcap I = E \bigcap\left(\bigsqcup_{k = 1}^{\infty}I_k\right) = \bigsqcup_{k = 1}^{\infty} \left(E\bigcap I_k\right).
+      \end{aligned}
+    \end{equation*}
+    By the countable subadditivity of Lebesgue Outer Measure (Theorem \ref*{thm:3.4}), we have 
+    \begin{equation*}
+      \begin{aligned}
+        |E|_e\leq \sum_{k = 1}^{\infty} \left|E\bigcap I_k\right|_e.
+      \end{aligned}
+    \end{equation*}
+
+    Suppose, by way of contradiction, that \(\forall I_k\), 
+    \begin{equation*}
+      \begin{aligned}
+         \left|E\bigcap I_k\right|_e <\alpha |I_k|_e,
+      \end{aligned}
+    \end{equation*}
+    then we have
+    \begin{equation*}
+      \begin{aligned}
+        |E|_e\leq \sum_{k = 1}^{\infty}\left|E\bigcap I_k\right|_e < \sum_{k = 1}^{\infty}\alpha |I_k|_e = \alpha \sum_{k = 1}^{\infty} |I_k|_e = \alpha |I|_e \leq |E|_e.
+      \end{aligned}
+    \end{equation*}
+    The second equality holds since \(I_k\) are disjoint and open.
+
+    Thus, it is implied that 
+    \begin{equation*}
+      \begin{aligned}
+        |E|_e < |E|_e,
+      \end{aligned}
+    \end{equation*}
+
+    which is a contradiction. Therefore, our assumption that \(\forall I_k, \left|E\bigcap I_k\right|_e <\alpha |I_k|_e\) must be false, which means that 
+    there exists an open interval \(I\) so that
+    \begin{equation*}
+      \begin{aligned}
+        |E \cap I|_e \geq \alpha |I|_e.
+      \end{aligned}
+    \end{equation*}
+
+\dotfill
+
+(b)
+
+% \(D(E) = E-E = \{d|d = x-y, x\in E, y\in E\}\)
+
+\(\exists G\) open s.t. \(E\subseteq G\) and \(|G| < |E|(1+\epsilon) \).
+
+Since \(G\) is open, \(G\) can be written as a countable union of disjoint open intervals
+\begin{equation*}
+  \begin{aligned}
+    G = \bigsqcup_{k = 1}^{\infty}\mathring{I}_k.
+  \end{aligned}
+\end{equation*}
+
+Let \(E_k = \mathring{I}_k\cap E\), \(\{E_k\}_{k=1}^{\infty}\) is a sequence of disjoint measurable sets.
+
+\begin{equation*}
+  \begin{aligned}
+    |G| = \sum_{k = 1}^{\infty}|\mathring{I}_k|,\\
+    |E| = \sum_{k = 1}^{\infty}|E_k|.
+  \end{aligned}
+\end{equation*}
+\begin{equation}
+  \begin{aligned}
+    |G| 
+    &= \sum_{k = 1}^{\infty}|\mathring{I}_k|&&<|E|(1+\epsilon)\\
+    &&&=\left(\sum_{k = 1}^{\infty}|E_k|\right)(1+\epsilon).\label{eq.01}
+    % |E| = \sum_{k = 1}^{\infty}|E_k|.
+  \end{aligned}
+\end{equation}
+
+\(\exists k_0\) s.t. \(|\mathring{I}_{k0}|<|E_{k0}|(1+\epsilon)\).
+
+\begin{mybox}{}
+
+  Suppose not; in other words, \(|\mathring{I}_{k}|\geq|E_{k}|(1+\epsilon), \forall k\),
+  \begin{equation*}
+    \begin{aligned}
+  \sum_{k = 1}^{\infty}|\mathring{I}_k|\geq\left(\sum_{k = 1}^{\infty}|E_k|\right)(1+\epsilon),
+    \end{aligned}
+  \end{equation*}
+    
+    contradicting ~(\ref{eq.01}).
+
+\end{mybox}
 
 
-  \end{solution}
+  Let \(\epsilon = \frac{1}{3}\), we have
+  \begin{equation*}
+    \begin{aligned}
+      &|\mathring{I}_{k0}|<|E_{k0}|(1+\frac{1}{3}) = \frac{4}{3}|E_{k0}|,\\
+      &\frac{3}{4}|\mathring{I}_{k0}|<|E_{k0}|.
+    \end{aligned}
+  \end{equation*}
+Let \(E_{k0} + d = \{x+d \,|\, x\in E_{k0} \}\).
+
+Claim: (to be proved by contradiction)
+
+If \(|d| \leq \frac{1}{2}|\mathring{I}_{k0}|\),
+\begin{equation*}
+  \begin{aligned}
+    (E_{k0} + d)\cap E_{k0} \neq \emptyset.
+  \end{aligned}
+\end{equation*}
+
+\(\Rightarrow \)
+
+\begin{equation*}
+  \begin{aligned}
+    \left(-\frac{1}{2}|\mathring{I}_{k0}|\,,\,\frac{1}{2}|\mathring{I}_{k0}|\right)&\subseteq\{x-y\,|\,x,y \in E_{k0}\}\\
+    &\subseteq \{x-y\,|\,x,y \in E\}
+  \end{aligned}
+\end{equation*}
+
+
+  
+\end{solution}
+
+\pagebreak
+
+\begin{mybox}{Proof of Claim}
+
+  Claim: 
+
+If \(|d| \leq \frac{1}{2}|\mathring{I}_{k0}|\),
+\begin{equation*}
+  \begin{aligned}
+    (E_{k0} + d)\cap E_{k0} \neq \emptyset.
+  \end{aligned}
+\end{equation*}
+
+\begin{proof}
+  Suppose not; in other words, \(E_{k0} + d \) and \(E_{k0}\) are disjoint measurable sets.
+  \begin{equation*}
+    \begin{aligned}
+      |(E_{k0} + d)\cup E_{k0}| &= |(E_{k0} + d)| + |E_{k0}| \\
+      &= 2|E_{k0}|.
+    \end{aligned}
+  \end{equation*}
+  Since \(E_k = \mathring{I}_k\cap E\), we have
+  \begin{equation*}
+    \begin{aligned}
+      (E_{k0} + d)\cup E_{k0} \subseteq (\mathring{I}_{k0} + d) \cup \mathring{I}_{k0},
+    \end{aligned}
+  \end{equation*}
+  and
+  \begin{equation*}
+    \begin{aligned}
+      |(E_{k0} + d)\cup E_{k0}| 
+      &\leq |(\mathring{I}_{k0} + d) \cup \mathring{I}_{k0}|\\
+      &= |\mathring{I}_{k0}| + |d|\\
+      &< \frac{3}{2} |\mathring{I}_{k0}|.
+    \end{aligned}
+  \end{equation*}
+  Thus, we have
+  \begin{equation*}
+    \begin{aligned}
+      |(E_{k0} + d)\cup E_{k0}|  = 2|E_{k0}|
+      &< \frac{3}{2} |\mathring{I}_{k0}| &&< \frac{3}{2} |E_{k0}|(1+\frac{1}{3})\\
+      &&&=2|E_{k0}|.
+    \end{aligned}
+  \end{equation*}
+  This leads to a contradiction: \(2|E_{k0}|<2|E_{k0}|\).
+
+  Therefore, if \(|d| \leq \frac{1}{2}|\mathring{I}_{k0}|\),
+  \begin{equation*}
+    \begin{aligned}
+      (E_{k0} + d)\cap E_{k0} \neq \emptyset.
+    \end{aligned}
+  \end{equation*}
+
+\end{proof}
+
+
+\end{mybox}
+
+
+
+\begin{mybox}{Countable Subadditivity of Lebesgue Outer Measure}
+
+  \setcounter{section}{3} 
+  \setcounter{theorem}{3}
+  
+  \begin{theorem}\label{thm:3.4}
+    If $E = \bigcup_{k} E_k$ is a countable union of sets, then $|E|_e \leq \sum_{k} |E_k|_e$.
+    \end{theorem}
+    
+    \begin{proof}
+    We may assume that $|E_k|_e < +\infty$ for each $k = 1, 2, \ldots$, since otherwise, the conclusion is obvious. Fix $\varepsilon > 0$. Given $k$, choose intervals $I^{(k)}_j$ such that $E_k \subset \bigcup_j I^{(k)}_j$ and $\sum_j v(I^{(k)}_j) < |E_k|_e + \varepsilon 2^{-k}$.
+    
+    Since $E \subset \bigcup_{j,k} I^{(k)}_j$, we have $|E|_e \leq \sum_{j,k} v(I^{(k)}_j) = \sum_k \sum_j v(I^{(k)}_j)$. Therefore,
+    \[|E|_e \leq \sum_k (|E_k|_e + \varepsilon 2^{-k}) = \sum_k |E_k|_e + \varepsilon,\]
+    and the result follows by letting $\varepsilon \to 0$.\footcite[][42]{Wheeden_Zygmund_2015}
+    \end{proof}
+     
+
+\end{mybox}
+  
+
+
+
 
 \end{document}
