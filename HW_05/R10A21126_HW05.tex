@@ -1,0 +1,175 @@
+\documentclass[UTF8,a4paper,10pt]{article}
+
+% \begin{equation*}
+%   \begin{aligned}
+%   \end{aligned}
+% \end{equation*}
+
+% \begin{mybox}{}
+% \end{mybox}
+
+
+% \begin{Problem}[]{}
+% \end{Problem}
+
+% \begin{solution}\,
+% \end{solution}
+  
+
+% \begin{enumerate}[label=(\alph*)]
+% \end{enumerate} 
+
+% \setcounter{section}{3} 
+% \setcounter{theorem}{3}
+
+% \begin{theorem}\label{thm:3.4}
+%   If $E = \bigcup_{k} E_k$ is a countable union of sets, then $|E|_e \leq \sum_{k} |E_k|_e$.
+%   \end{theorem}
+
+%  \footcite[][42]{Wheeden_Zygmund_2015}
+
+\input{preamble.tex}
+
+\begin{document}
+
+
+
+  \begin{Problem}[]{Zygmund p59 exercise 05}
+    Construct a subset of $[0, 1]$ in the same manner as the Cantor set, except that at the $k$-stage, each interval removed has length $\delta3^{-k}$, where $0 < \delta < 1$. Show that the set has measure $1 - \delta$.
+    %  [Zygmund p48 exercise 5]
+
+
+ 
+  \end{Problem}
+
+  
+\begin{solution}\,
+
+  Construct a subset of \([0, 1]\) in the same manner as the Cantor set, except that at the \(k\)-th stage, each interval removed has length \(\delta 3^{-k}\), \(0 < \delta < 1\). Let \(F_k\) denote the union of the intervals left at the \(k\)-th stage.
+  Now show that the resulting set (Fat Cantor Set) \(F = \bigcap_{k=1}^{\infty} F_k \) has positive measure \(1 - \delta\), and contains no intervals.
+  
+  By construction,
+  \begin{equation*}
+    \begin{aligned}
+      |F_k| = 1 - \sum_{i=1}^{k} 2^{i-1}\delta(\frac{1}{3})^i.
+    \end{aligned}
+  \end{equation*}
+  Since
+  \begin{equation*}
+    \begin{aligned}
+      0\leq|F|_e\leq|F_k|_e,
+    \end{aligned}
+  \end{equation*}
+  let \(k\to \infty\), we have 
+  \begin{equation*}
+    \begin{aligned}
+      |F|_e = \lim_{k \to \infty}|F_k|_e = 1-\delta  .
+    \end{aligned}
+  \end{equation*}
+  
+  Since \(F\) cannot contain an interval of length greater than \(1/2^k\) for all \(k\), so \(F\) contains no intervals. 
+  
+
+
+\end{solution}
+
+  
+\begin{Problem}[]{Zygmund p60 exercise 25}
+
+  Construct a measurable subset in $[0, 1]$ such that for every interval in $[0, 1]$, both $E \cap I$ and $E^c \cap I$ have some property. 
+  % [Zygmund p49 exercise 25]
+\end{Problem}
+
+
+\begin{solution}\,
+
+Therefore, we have
+\begin{equation*}
+  \begin{aligned}
+    |I\cap F^c| > 0,  \forall I\subseteq[0,1] .
+  \end{aligned}
+\end{equation*}
+However, by construction,
+\begin{equation*}
+  \begin{aligned}
+    \exists I\subseteq[0,1]\text{ s.t. }|I\cap F^c| > 0.
+  \end{aligned}
+\end{equation*}
+
+Construct another such set on each subinterval of the complement of F, and get the resulting set \(E\). Thus, \(E^c\) contains no intervals by construction. Therefore, \(\forall I\subseteq[0,1]\), we have
+\begin{equation*}
+  \begin{aligned}
+    |I\cap E| > 0,\\
+    |I\cap E^c| > 0.
+  \end{aligned}
+\end{equation*}
+
+\end{solution}
+
+
+\begin{Problem}[]{}
+  Motivated by (3.7), define the inner measure of $E$ by $|E|_i = \sup |F|$, where
+  the supremum is taken over all closed subsets $F$ of $E$. Show that
+  \begin{enumerate}
+    \item $|E|_i \leq |E|_e$,
+    \item if $|E|_e < +\infty$, then $E$ is measurable if and only if $|E|_i = |E|_e$.
+  \end{enumerate}
+  (Use Lemma 3.22.)
+
+\end{Problem}
+
+
+\begin{mybox}{}
+
+  \setcounter{section}{3} 
+  \setcounter{theorem}{5}
+  
+  \begin{theorem}\label{thm:3.6}
+    Let $E \subset \mathbb{R}^n$. Then, given $\varepsilon > 0$, there exists an open set $G$ such that
+    $E \subset G$ and $|G|_e \leq |E|_e + \varepsilon$. Hence,
+    % \[  \]
+
+    \begin{equation}
+      \tag{3.7}
+      \begin{aligned}
+        |E|_e = \inf |G|_e,
+      \end{aligned}
+    \end{equation}
+    where the infimum is taken over all open sets $G$ containing $E$.
+    
+    \end{theorem}
+    
+    \begin{proof}
+    We may assume that $|E_k|_e < +\infty$ for each $k = 1, 2, \ldots$, since otherwise, the conclusion is obvious. Fix $\varepsilon > 0$. Given $k$, choose intervals $I^{(k)}_j$ such that $E_k \subset \bigcup_j I^{(k)}_j$ and $\sum_j v(I^{(k)}_j) < |E_k|_e + \varepsilon 2^{-k}$.
+    
+    Since $E \subset \bigcup_{j,k} I^{(k)}_j$, we have $|E|_e \leq \sum_{j,k} v(I^{(k)}_j) = \sum_k \sum_j v(I^{(k)}_j)$. Therefore,
+    \[|E|_e \leq \sum_k (|E_k|_e + \varepsilon 2^{-k}) = \sum_k |E_k|_e + \varepsilon,\]
+    and the result follows by letting $\varepsilon \to 0$.\footcite[][42]{Wheeden_Zygmund_2015}
+    \end{proof}
+     
+
+\end{mybox}
+
+
+\begin{Problem}[]{}
+  Construct a continuous function $f$ such that $f$ on $[0, 1]$ is not of bounded variation on any interval. (Hint: Modify the Cantor-Lebesgue function) [Zygmund p49 exercise 26]
+
+\end{Problem}
+
+\begin{Problem}[]{}
+  Show that there are disjoint sets $E_i \subset \mathbb{R}$, where $i = 1, 2, \ldots$, such that $\left|\bigcup_{i=1}^{\infty} E_i\right|_e < \sum_{i=1}^{\infty}|E_i|_e.$ [Zygmund p48 exercise 20]
+
+\end{Problem}
+
+  \begin{solution}\,
+
+
+
+  \end{solution}
+  \pagebreak
+
+
+
+
+
+\end{document}
