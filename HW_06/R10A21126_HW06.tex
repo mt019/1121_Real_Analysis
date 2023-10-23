@@ -37,263 +37,50 @@
   \begin{Problem}[]{Zygmund p76 exercise 05}
     Give an example to show that $\varphi(f(x))$ may not be measurable if $\varphi$ and $f$ are measurable and finite. (Let $F$ be the Cantor–Lebesgue function and let $f$ be its inverse, suitably defined. Let $\varphi$ be the characteristic function of a set of measure zero whose image under $F$ is not measurable.) Show that the same may be true even if $f$ is continuous. (Let $g(x) = x + F(x)$, where $F$ is the Cantor–Lebesgue function, and consider $f = g^{-1}$.) Cf. Exercise 22.
 
-
-
- 
   \end{Problem}
 
-  
-\begin{solution}\,
-
-  Construct a subset of \([0, 1]\) in the same manner as the Cantor set, except that at the \(k\)-th stage, each interval removed has length \(\delta 3^{-k}\), \(0 < \delta < 1\). Let \(F_k\) denote the union of the intervals left at the \(k\)-th stage.
-  Now show that the resulting set (Fat Cantor Set) \(F = \bigcap_{k=1}^{\infty} F_k \) has positive measure \(1 - \delta\), and contains no intervals.
-  
-  By construction,
-  \begin{equation*}
-    \begin{aligned}
-      |F_k| = 1 - \sum_{i=1}^{k} 2^{i-1}\delta(\frac{1}{3})^i.
-    \end{aligned}
-  \end{equation*}
-  Since
-  \begin{equation*}
-    \begin{aligned}
-      0\leq|F|_e\leq|F_k|_e,
-    \end{aligned}
-  \end{equation*}
-  let \(k\to \infty\), we have 
-  \begin{equation*}
-    \begin{aligned}
-      |F|_e = \lim_{k \to \infty}|F_k|_e = 1-\delta  .
-    \end{aligned}
-  \end{equation*}
-  
-  Since \(F\) cannot contain an interval of length greater than \(1/2^k\) for all \(k\), so \(F\) contains no intervals. 
-  
-
-
-\end{solution}
-
-  
-\begin{Problem}[]{Zygmund p60 exercise 25}
-
-  Construct a measurable subset \(E\) of \([0, 1]\) such that for every subinterval \(I\), both \(E \cap  I\) and \(I - E\) have positive measure. (Take a Cantor-type subset of \([0, 1]\) with positive measure [see Exercise 5], and on each subinterval of the complement of this set, construct another such set, and so on. The measures can be arranged so that the union of all the sets has the desired property.) See also Exercise 21 of Chapter 4.
-
-\end{Problem}
-
-
-\begin{solution}\,
-
-Therefore, we have
-\begin{equation*}
-  \begin{aligned}
-    |I\cap F^c| > 0,  \forall I\subseteq[0,1] .
-  \end{aligned}
-\end{equation*}
-However, by construction,
-\begin{equation*}
-  \begin{aligned}
-    \exists I\subseteq[0,1]\text{ s.t. }|I\cap F^c| > 0.
-  \end{aligned}
-\end{equation*}
-
-Construct another such set on each subinterval of the complement of F, and get the resulting set \(E\). Thus, \(E^c\) contains no intervals by construction. Therefore, \(\forall I\subseteq[0,1]\), we have
-\begin{equation*}
-  \begin{aligned}
-    |I\cap E| > 0,\\
-    |I\cap E^c| > 0.
-  \end{aligned}
-\end{equation*}
-
-\end{solution}
-
-
-\pagebreak
-% Q3
-\begin{Problem}[]{Zygmund p59 exercise 13}
-  Motivated by (3.7), define the inner measure of $E$ by $|E|_i = \sup |F|$, where
-  the supremum is taken over all closed subsets $F$ of $E$. Show that
-  \begin{enumerate}
-    \item $|E|_i \leq |E|_e$,
-    \item if $|E|_e < +\infty$, then $E$ is measurable if and only if $|E|_i = |E|_e$.
-  \end{enumerate}
-  (Use Lemma 3.22.)
-
-\end{Problem}
-
-
-\begin{mybox}{}
-
-  \setcounter{section}{3} 
-  \setcounter{theorem}{5}
-  
-  \begin{theorem}\label{thm:3.6}
-    Let $E \subset \mathbb{R}^n$. Then, given $\varepsilon > 0$, there exists an open set $G$ such that
-    $E \subset G$ and $|G|_e \leq |E|_e + \varepsilon$. Hence,
-    % \[  \]
-
-    \begin{equation}
-      \tag{3.7}
-      \begin{aligned}
-        |E|_e = \inf |G|_e,
-      \end{aligned}
-    \end{equation}
-    where the infimum is taken over all open sets $G$ containing $E$.
-    
-    \end{theorem}
-    
-    \begin{proof}
-    We may assume that $|E_k|_e < +\infty$ for each $k = 1, 2, \ldots$, since otherwise, the conclusion is obvious. Fix $\varepsilon > 0$. Given $k$, choose intervals $I^{(k)}_j$ such that $E_k \subset \bigcup_j I^{(k)}_j$ and $\sum_j v(I^{(k)}_j) < |E_k|_e + \varepsilon 2^{-k}$.
-    
-    Since $E \subset \bigcup_{j,k} I^{(k)}_j$, we have $|E|_e \leq \sum_{j,k} v(I^{(k)}_j) = \sum_k \sum_j v(I^{(k)}_j)$. Therefore,
-    \[|E|_e \leq \sum_k (|E_k|_e + \varepsilon 2^{-k}) = \sum_k |E_k|_e + \varepsilon,\]
-    and the result follows by letting $\varepsilon \to 0$.\footcite[][42]{Wheeden_Zygmund_2015}
-    \end{proof}
-     
-
-\end{mybox}
-
-\pagebreak
-
-% Q4
-
-\begin{Problem}[]{Zygmund p60 exercise 26}  
-
-  Construct a continuous function \(f\) on \([0, 1]\), which is not of bounded variation on any subinterval. 
-
-\end{Problem}
-
-
-\begin{solution}\,
-
-
-  The construction follows the pattern of the  Cantor–Lebesgue function with some modifications. At the first stage, make the corresponding function increase to 2/3 (rather than 1/2) in (0, 1/3), then make it decrease by 1/3 in (1/3, 2/3), and then increase again 2/3 in (2/3, 1). 
-  
-  In the next stage, for each subinterval, apply a similar pattern based on the behavior of the function in the preceding interval. If the function was increasing in the previous interval, make it decrease by a certain amount in the middle of the current interval. If it was decreasing, make it increase by a certain amount. 
-  
-  
-  Repeat this process infinitely.
-  It should be sufficient to ensure that the function's oscillations are unbounded.
-
-  The construction at each stage should make sure that the function is continuous.
-  With these alternating operations, the key to the unbounded variation is the fact that the function switches between increasing and decreasing behavior within each subinterval, and the oscillations do not converge to a limit.
-
-\end{solution}
-
-% Q5
-% \pagebreak
-
-\begin{Problem}[]{Zygmund p60 exercise 20}
-  Show that there are disjoint sets $E_i \subset \mathbb{R}$, where $i = 1, 2, \ldots$, such that $\left|\bigcup_{i=1}^{\infty} E_i\right|_e < \sum_{i=1}^{\infty}|E_i|_e.$ 
-
-\end{Problem}
-
-
-\begin{mybox}{}
-    \setcounter{theorem}{36}
-    \begin{lemma}
-      Let $E$ be a measurable subset of $\mathbb{R}^1$ with $|E| > 0$. Then the set of differences $\{d : d = x - y, x \in E, y \in E\}$ contains an interval centered at the origin.
-      \end{lemma}
-      
-
-    % \setcounter{theorem}{37}
-    \begin{theorem}[Vitali]
-      There exist nonmeasurable sets.
-      \end{theorem}
-    
-      \begin{proof}
-        We define an equivalence relation on the real line by saying that $x$ and $y$ are equivalent if $x - y$ is rational. The equivalence classes then have the form
-        \[
-        E_x = \{x + r : r \text{ is rational}\}.
-        \]
-        Two classes $E_x$ and $E_y$ are either identical or disjoint;
-        therefore, one equivalence class consists of all the rational numbers, and the
-  other distinct classes are disjoint sets of irrational numbers. The number of
-  distinct equivalence classes is uncountable since each class is countable, but
-  the union of all the classes is uncountable (this union being the entire line).
-  Using Zermelo's axiom, let $E$ be a set consisting of exactly one element
-  from each distinct equivalence class. Since any two points of $E$ must differ by
-  an irrational number, the set $\{d : d = x - y, x \in E, y \in E\}$ cannot contain an
-  interval. By Lemma 3.37, it follows that either $E$ is not measurable or $|E| = 0$.
-  Since the union of the translates of $E$ by every rational number is all of $\mathbb{R}^1$, $\mathbb{R}^1$
-  would have measure zero if $E$ did. We conclude that $E$ is not measurable.
-
-      \end{proof}
-
-    \end{mybox}
-
-\pagebreak
-\begin{solution}\,
-
-  Let $E$ be a set consisting of exactly one element
-  from each distinct equivalence class in \([0,1]\).
-  \begin{equation*}
-    \begin{aligned}
-      \forall x\neq y\in E,\\
-       x-y \notin \mathbb{Q}.
-    \end{aligned}
-  \end{equation*}
-
-  Let \(\{r_i\}_{i=1}^{\infty}\) be the enumeration of rational numbers in the interval \([0, 1]\).
-  
-  In other words, \(\{r_i\}_{i=1}^{\infty}=\mathbb{Q} \cap [0,1]\).
-  
-  Let
-
-\begin{equation*}
-  \begin{aligned}
-    E_i = E+r_i.
-  \end{aligned}
-\end{equation*}
-
- \(E_i\) are disjoint.
-
  
-\begin{mybox}{}
-  \(\forall i \neq j \), \(E_i\cap E_j = \emptyset\).
+\begin{Problem}[]{}
 
-  prove by contradiction:
-
-  If \(\forall i \neq j \), \(E_i\cap E_j \neq \emptyset\),
-
-  then \(\exists x\in E_i\cap E_j \),
-  which means \( x\in E_i\) and \(x\in E_j\).
-
-  \begin{equation*}
-    \begin{aligned}
-      &x\in E_i\Rightarrow x\in (E+r_i)\Rightarrow x-r_i\in E;\\
-      &x\in E_j\Rightarrow x\in (E+r_j) \Rightarrow x-r_j\in E.
-    \end{aligned}
-  \end{equation*}
-
-  \((x-r_i)-(x-r_j)\) is rational, contradictory to the construction of \(E\).
-
-  Therefore, we can conclude that  \(\forall i \neq j \), \(E_i\cap E_j = \emptyset\).
-
-
-
-\end{mybox}
-
-
-\(E_i\) are nonmeasurable and \(\bigcup_{i=1}^{\infty} E_i \subseteq [0,2]\).
-
-We have
+  Let \(\chi_{[0,1]} \) be the characteristic function of \([0,1]\). Show that there is no everywhere continuous function \(f\) on \(\R\) such that
 \begin{equation*}
   \begin{aligned}
-\left|\bigcup_{i=1}^{\infty} E_i\right|_e
-\leq |[0,2]|_e = 2.
-\end{aligned}
+    f(x) = \chi_{[0,1]} (x) \,\,\text{almost everywhere.}
+  \end{aligned}
 \end{equation*}
+\end{Problem}
 
-However, since \(|E_i|_e>0\), we observe that
-\begin{equation*}
-  \begin{aligned}
-    \sum_{i=1}^{\infty}|E_i|_e = \infty.
-\end{aligned}
-\end{equation*}
+\begin{solution}\,
 
-Therefore, we can conclude that \(\left|\bigcup_{i=1}^{\infty} E_i\right|_e < \sum_{i=1}^{\infty}|E_i|_e\).
+  \begin{gather*}
+    f(x) = \chi_{[0,1]}(x) \text{ almost everywhere.} \\
+    \Updownarrow \\
+    |\{x | f(x) \neq \chi_{[0,1]}(x)\}| = 0.
+  \end{gather*}
 
+\dotfill
 
-  \end{solution}
+  Suppose, for the sake of contradiction, that \(\exists f\) on \(\R\) s.t. 
+  \begin{gather*}
+    f(x) = \chi_{[0,1]}(x) \text{ almost everywhere.}
+  \end{gather*}
+  Without loss of generality, \(f(x) = 1, x\in [0,1]\).
+
+  By the definition of continuous everywhere,
+  \(\forall \epsilon>0, \exists \delta>0\), s.t. \(|x-0|<\delta \Rightarrow |f(x)-f(0)|<\epsilon\), which means \(|f(x)-1|<\epsilon\).
+
+  \begin{align*}
+    &\Rightarrow f(x) \neq 0 \text{ on } [-\delta, 0] \\
+    &\Rightarrow f(x) \neq \chi_{[0,1]} \text{ on } [-\delta, 0], \delta>0.
+\end{align*}
+Thus, \(|\{x | f(x) \neq \chi_{[0,1]}(x)\}| \neq 0\), which contradicts the assumption that \(f(x) = \chi_{[0,1]}(x) \) a.e.
+
+Therefore, we conclude that there is no everywhere continuous function \(f\) on \(\R\) such that \(f(x) = \chi_{[0,1]}(x) \) a.e.
+
+\end{solution}
+
+\begin{Problem}[]{}
+  Let \(\Gamma\subset \R^d \times\R\), \(\Gamma = \{(x,y)\in\R^d\times\R:y = f(x)\}\), and assume \(f\) is measurable on \(\R^d\). Show that \(\Gamma\) is a measurable subset of \(\R^{d+1}\), and \(|\Gamma| = 0.\)
+\end{Problem}
 
 \end{document}
