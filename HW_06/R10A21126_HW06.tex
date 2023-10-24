@@ -23,7 +23,7 @@
 % \setcounter{theorem}{3}
 
 % \begin{theorem}\label{thm:3.4}
-%   If $E = \bigcup_{k} E_k$ is a countable union of sets, then $|E|_e \leq \sum_{k} |E_k|_e$.
+%   If $E = \bigsqcup_{k} E_k$ is a countable union of sets, then $|E|_e \leq \sum_{k} |E_k|_e$.
 %   \end{theorem}
 
 %  \footcite[][42]{Wheeden_Zygmund_2015}
@@ -79,8 +79,49 @@ Therefore, we conclude that there is no everywhere continuous function \(f\) on 
 
 \end{solution}
 
+\pagebreak
+
 \begin{Problem}[]{}
   Let \(\Gamma\subset \R^d \times\R\), \(\Gamma = \{(x,y)\in\R^d\times\R:y = f(x)\}\), and assume \(f\) is measurable on \(\R^d\). Show that \(\Gamma\) is a measurable subset of \(\R^{d+1}\), and \(|\Gamma| = 0.\)
 \end{Problem}
+
+\begin{solution}\,\\
+
+  It suffices to prove that $|\Gamma|_e = 0$. Since $R^d$ is a countable union of almost disjoint cubes of side length $1$, it is enough to show that $|\Gamma'|_e = 0$, where 
+  \[\Gamma' = \{(x, y) \in [0, 1]^d \times \mathbb{R} : y = f|_{[0,1]^d} (x)\}.\]
+
+  Since we know $R = \bigsqcup _{k\in\mathbb{Z}}[k, k + 1)$, it follows that 
+  \[\Gamma' = \bigsqcup_{k\in\mathbb{Z}}\{(x, y) \in [0, 1]^d \times [k, k + 1) : y = f|_{[0,1]^d} (x)\}.\]
+  
+  Again, it is sufficient to prove that $|\Gamma''|_e = 0$, where 
+  \[\Gamma'' = \{(x, y) \in [0, 1]^d \times [0, 1) : y = f|_{[0,1]^d} (x)\}.\]
+  
+  For every $n \in \mathbb{N}$, we have $[0, 1) = \bigsqcup_{j=1}^n I_j$, where $I_j = \left[\frac{j - 1}{n}, \frac{j}{n}\right)$ for all $j \in \{1, 2, \ldots, n\}$.
+  
+  Since we know 
+ \[\Gamma'' = \bigsqcup_{j=1}^n \left\{(x, y) \in [0, 1]^d \times I_j : y = f|_{[0,1]^d} (x)\right\},\]
+  
+  and $f|_{[0,1]^d}$ is measurable on $[0, 1]^d$, it follows that
+  \begin{align*}
+  |\Gamma''|_e &\le \sum_{j=1}^n \bigg|\left\{(x, y) \in [0, 1]^d \times I_j : y = f|_{[0,1]^d} (x)\right\}\bigg|_e \\
+  &\le \sum_{j=1}^n \bigg|f|_{[0,1]^d}^{\text{pre}} (I_j) \times I_j \bigg|_e \\
+  &\le \sum_{j=1}^n \bigg|f|_{[0,1]^d}^{\text{pre}} (I_j)\bigg| \cdot |I_j| \\
+  &= \frac{1}{n} \sum_{j=1}^n \bigg|f|_{[0,1]^d}^{\text{pre}} (I_j)\bigg| \\
+  &= \frac{1}{n} \bigg|\bigsqcup_{j=1}^n f|_{[0,1]^d}^{\text{pre}} (I_j)\bigg| \\
+  &= \frac{1}{n} \bigg| f|_{[0,1]^d}^{\text{pre}} \left([0,1)\right)\bigg|  \le \frac{1}{n} \bigg|[0, 1]^d\bigg| = \frac{1}{n}
+  \end{align*}
+
+  for all $n \in \mathbb{N}$. Hence, we have
+
+  \begin{equation*}
+  |\Gamma''|_e \le \lim_{n \to \infty} \frac{1}{n} = 0.
+  \end{equation*}
+
+  Therefore, we obtain
+  % \begin{equation*}
+  \(|\Gamma''|_e = 0.\)
+  % \end{equation*}
+    
+\end{solution}
 
 \end{document}
