@@ -1300,4 +1300,52 @@ File: english.lbx 2022/07/12 v3.18b biblatex localization (PK/MW)
 )
 Package biblatex Info: XeTeX detected.
 (biblatex)             Assuming input encoding 'utf8'.
-Pack
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+\openout5 = `R10A21126_HW06.bcf'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'R10A21126_HW06.bbl' not found.
+
+No file R10A21126_HW06.bbl.
+Package biblatex Info: Reference section=0 on input line 33.
+Package biblatex Info: Reference segment=0 on input line 33.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+
+Package pgfplots Warning: running in backwards compatibility mode (unsuitable tick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into your preamble.
+ on input line 33.
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 38.
+(d:/MaakApp/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 38.
+ (d:/MaakApp/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 88--89
+
+ []
+
+
+AED: lastpage setting LastPage
+[2] (./R10A21126_HW06.aux)
+Package rerunfilecheck Info: File `R10A21126_HW06.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+Package logreq Info: Writing requests to 'R10A21126_HW06.run.xml'.
+\openout1 = `R10A21126_HW06.run.xml'.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 53953 strings out of 475848
+ 1283542 string characters out of 5801585
+ 2205426 words of memory out of 5000000
+ 74241 multiletter control sequences out of 15000+600000
+ 473401 words of font info for 56 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 104i,12n,107p,726b,3846s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+Output written on R10A21126_HW06.pdf (2 pages).
