@@ -1,0 +1,55 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{Wheeden_Zygmund_2015}{book}{}
+      \name{author}{2}{}{%
+        {{hash=9ce9472df10b2f405a634bac54580e74}{%
+           family={Wheeden},
+           familyi={W\bibinitperiod},
+           given={Richard\bibnamedelima L.},
+           giveni={R\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=84bab7e6c163680d0e37c9fa644b38c5}{%
+           family={Zygmund},
+           familyi={Z\bibinitperiod},
+           given={Antoni},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {CRC}%
+      }
+      \strng{namehash}{8e4ecdf5dadf7beaded0b160c8234911}
+      \strng{fullhash}{8e4ecdf5dadf7beaded0b160c8234911}
+      \strng{bibnamehash}{8e4ecdf5dadf7beaded0b160c8234911}
+      \strng{authorbibnamehash}{8e4ecdf5dadf7beaded0b160c8234911}
+      \strng{authornamehash}{8e4ecdf5dadf7beaded0b160c8234911}
+      \strng{authorfullhash}{8e4ecdf5dadf7beaded0b160c8234911}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \true{singletitle}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Measure and integral: An introduction to real analysis}
+      \field{year}{2015}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
