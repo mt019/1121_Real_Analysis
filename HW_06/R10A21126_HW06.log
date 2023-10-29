@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.8.25)  24 OCT 2023 16:28
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.8.25)  30 OCT 2023 01:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1326,7 +1326,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 88--89
+Underfull \hbox (badness 10000) in paragraph at lines 97--98
 
  []
 
@@ -1342,7 +1342,7 @@ Package logreq Info: Writing requests to 'R10A21126_HW06.run.xml'.
 Here is how much of TeX's memory you used:
  53953 strings out of 475848
  1283542 string characters out of 5801585
- 2205426 words of memory out of 5000000
+ 2206425 words of memory out of 5000000
  74241 multiletter control sequences out of 15000+600000
  473401 words of font info for 56 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
