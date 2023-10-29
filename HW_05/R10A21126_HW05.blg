@@ -1,0 +1,15 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:310> INFO - Logfile is 'R10A21126_HW05.blg'
+[34] biber-darwin:340> INFO - === Fri Oct 27, 2023, 01:30:34
+[42] Biber.pm:419> INFO - Reading 'R10A21126_HW05.bcf'
+[85] Biber.pm:979> INFO - Found 1 citekeys in bib section 0
+[92] Biber.pm:4419> INFO - Processing section 0
+[98] Biber.pm:4610> INFO - Looking for bibtex file 'R10A21126.bib' for section 0
+[98] bibtex.pm:1713> INFO - LaTeX decoding ...
+[100] bibtex.pm:1519> INFO - Found BibTeX data source 'R10A21126.bib'
+[117] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[117] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[117] Biber.pm:4239> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[117] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[118] bbl.pm:660> INFO - Writing 'R10A21126_HW05.bbl' with encoding 'UTF-8'
+[118] bbl.pm:763> INFO - Output to R10A21126_HW05.bbl
