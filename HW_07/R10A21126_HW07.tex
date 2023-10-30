@@ -1,0 +1,98 @@
+\documentclass[UTF8,a4paper,10pt]{article}
+
+% \begin{equation*}
+%   \begin{aligned}
+%   \end{aligned}
+% \end{equation*}
+
+% \begin{mybox}{}
+% \end{mybox}
+
+
+% \begin{Problem}[]{}
+% \end{Problem}
+
+% \begin{solution}\,
+% \end{solution}
+  
+
+% \begin{enumerate}[label=(\alph*)]
+% \end{enumerate} 
+
+% \setcounter{section}{3} 
+% \setcounter{theorem}{3}
+
+% \begin{theorem}\label{thm:3.4}
+%   If $E = \bigsqcup_{k} E_k$ is a countable union of sets, then $|E|_e \leq \sum_{k} |E_k|_e$.
+%   \end{theorem}
+
+%  \footcite[][42]{Wheeden_Zygmund_2015}
+
+\input{preamble.tex}
+
+\begin{document}
+
+
+\begin{Problem}[]{Zygmund p77 exercise 11}
+
+  Let $f$ be defined on $\mathbb{R}^n$, and let $B(x)$ denote the open ball $\{y : |x - y| < r\}$ with center $x$ and fixed radius $r$. Show that the function $g(x) = \sup\{f(y) : y \in B(x)\}$ is lsc (lower semi-continuous), and that the function $h(x) = \inf\{f(y) : y \in B(x)\}$ is usc (upper semi-continuous) on $\mathbb{R}^n$. Is the same true for the closed ball $\{y : |x - y| \leq r\}$?
+
+
+\end{Problem}
+
+
+(a)
+
+lsc
+
+
+(b)
+
+usc
+
+
+
+\begin{Problem}[]{Zygmund p77 exercise 12}
+  If $f(x)$, $x \in \mathbb{R}^1$, is continuous at almost every point of an interval $[a, b]$, show that $f$ is measurable on $[a, b]$. 
+  
+  ---
+
+  Generalize this to functions defined in $\mathbb{R}^n$. 
+  
+  For a constructive proof, use the subintervals of a sequence of partitions to define a sequence of simple measurable functions converging to $f$ a.e. in $[a, b]$. Use Theorem 4.12. See also the proof of Theorem 5.54.
+
+    \end{Problem}
+
+    Assume $f(x)$ is continuous at almost every point of $[a, b]$. Let
+$E = \{x \in [a, b] : f$ is continuous at $x\}$.
+Let $Z = [a, b] \setminus E$. Then $|Z| = 0$. Note that $Z$ is measurable, and
+$E = [a, b] \setminus Z$ is measurable too.
+For any finite $\alpha$, we have
+$\{x \in [a, b] : f(x) > \alpha\} = \{x \in E : f(x) > \alpha\} \cup \{x \in Z : f(x) > \alpha\}$.
+Note that $\{x \in E : f(x) > \alpha\}$ is measurable since $f$ is continuous, thus
+measurable on $E$.
+Since $\{x \in Z : f(x) > \alpha\} \subset Z$, thus $|\{x \in Z : f(x) > \alpha\}| = 0$. Hence
+$\{x \in Z : f(x) > \alpha\}$ is also measurable.
+Thus $\{x \in [a, b] : f(x) > \alpha\}$ is measurable. This means $f$ is measurable
+on $[a, b]$.
+
+  
+\pagebreak
+
+  \begin{Problem}[]{Zygmund p78 exercise 15}
+Let $\{f_k\}$ be a sequence of measurable functions defined on a measurable set $E$ with $|E| < +\infty$. If $|f_k(x)| \leq M_x < +\infty$ for all $k$ for each $x \in E$, show that given $\varepsilon > 0$, there is a closed set $F \subset E$ and a finite $M$ such that $|E - F| < \varepsilon$ and $|f_k(x)| \leq M$ for all $k$ and all $x \in F$.
+
+  \end{Problem}
+
+  Let $\epsilon > 0$. For each $n \in \mathbb{N}$, define
+  \[ E_n := \left\{x \in E : |f_k(x)| \leq n \text{ for all } k\right\} = \bigcap_{k=1}^{\infty} \left\{x \in E : |f_k(x)| \leq n\right\}.\]
+  
+  Note that each $E_n$ is measurable since each $f_k$ is measurable.
+  Since each $M_x < \infty$, we have that $E_n \subseteq E$. By the Monotone Convergence Theorem for measure, $\lim_{n \to \infty} |E_n| = |E| < \infty$. Thus, there exists $N$ such that
+  \[ |E| - |E_M| = |E \setminus E_M| < \epsilon/2.\]
+  
+  Let $F$ be a closed set contained in $E_M$ such that $|E_M \setminus F| < \epsilon/2$.
+  Then $|E \setminus F| = |E \setminus E_M| + |E_M \setminus F| < \epsilon$, and $|f_k(x)| \leq N$ for all $k$ and all $x \in F$.
+  
+
+\end{document}
