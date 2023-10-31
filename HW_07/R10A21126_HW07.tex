@@ -33,6 +33,34 @@
 \begin{document}
 
 
+
+
+\begin{mybox}{4.2 Semicontinuous Functions}
+
+ \footcite[][69]{Wheeden_Zygmund_2015}
+Let $f$ be defined on $E$, and let $x_0$ be a limit point of $E$ that lies in $E$. Then $f$ is said to be upper semicontinuous at $x_0$ if
+
+
+\[
+\limsup_{\substack{x\to x_0 \\ x\in E}} f(x) \leq f(x_0).
+\]
+
+We will usually abbreviate this by saying that $f$ is usc at $x_0$. Note that if $f(x_0) = +\infty$, then $f$ is automatically usc at $x_0$; otherwise, the statement that $f$ is usc at $x_0$ means that given $M > f(x_0)$, there exists $\delta > 0$ such that $f(x) < M$ for all $x \in E$ that lie in the ball $|x - x_0| < \delta$. Intuitively, this means that near $x_0$, the values of $f$ do not exceed $f(x_0)$ by a fixed amount.
+
+Similarly, $f$ is said to be lower semicontinuous at $x_0$, or lsc at $x_0$, if
+
+\[
+\liminf_{\substack{x\to x_0 \\ x\in E}} f(x) \geq f(x_0).
+\]
+
+
+Thus, if $f(x_0) = -\infty$, $f$ is lsc at $x_0$, while if $f(x_0) > -\infty$, the definition amounts to saying that given $m < f(x_0)$, there exists $\delta > 0$ such that $f(x) > m$ if $x \in E$ and $|x - x_0| < \delta$. Equivalently, $f$ is lsc at $x_0$ if and only if $-f$ is usc at $x_0$.
+
+It follows that $f$ is continuous at $x_0$ if and only if $|f(x_0)| < +\infty$ and $f$ is both usc and lsc at $x_0$.
+
+\end{mybox}
+
+
 \begin{Problem}[]{Zygmund p77 exercise 11}
 
   Let $f$ be defined on $\mathbb{R}^n$, and let $B(x)$ denote the open ball $\{y : |x - y| < r\}$ with center $x$ and fixed radius $r$. Show that the function $g(x) = \sup\{f(y) : y \in B(x)\}$ is lsc (lower semi-continuous), and that the function $h(x) = \inf\{f(y) : y \in B(x)\}$ is usc (upper semi-continuous) on $\mathbb{R}^n$. Is the same true for the closed ball $\{y : |x - y| \leq r\}$?
@@ -40,17 +68,80 @@
 
 \end{Problem}
 
-
-(a)
-
+(a) 
 lsc
 
 
-(b)
+To prove by contradiction, we assume that \(g(x) = \sup\{f(y) : y \in B(x)\}\) is not lsc, to be specific,  \(\exists x_0\in \R^n\)
+ 
+\[
+\liminf_{\substack{x\to x_0 \\ x\in \R^n}} g(x) < g(x_0),
+\]
 
-usc
+that is,
+
+\[
+\liminf_{\substack{x\to x_0 \\ x\in \R^n}} \sup\{f(y) : y \in B(x)\} < \sup\{f(y) : y \in B(x_0)\}.
+\]
+
+Thus, by "lim inf", \(\exists x_n\to x_0\), \(\exists \epsilon>0\) s.t. 
+
+\[
+\sup\{f(y) : y \in B(x_n)\} < \sup\{f(y) : y \in B(x_0)\}-\epsilon.
+\]
+
+By "sup", \(\exists y\in B(x_0)\), s.t. 
+
+\begin{align*}
+  f(y) &> \sup\{f(y) : y \in B(x_0)\}-\epsilon/2\\
+  &> \sup\{f(y) : y \in B(x_n)\}+\epsilon/2.
+\end{align*}
+
+Note that \(\exists n0\) s.t. \(|x_{n0}-x_0|< r-|y-x_0|\), we have
+
+\begin{align*}
+  |y - x_{n0}| < |y - x_0| + |x_{n0} - x_0| < r,
+\end{align*}
+
+implying that \(y\in B(x_{n_0})\).
+
+Thus, 
+
+\begin{align*}
+  f(y) &> \sup \{f(z) : z\in B(x_{n_0})\} +\epsilon/2\\
+  &> f(y) +\epsilon/2,
+\end{align*}
+
+which is a contradiction.
+
+Therefore, we can conclude that \(g(x)\) is lower semicontinuous on \(\R^n\).
+
+\dotfill
+
+(b) 
+usc:
+
+Since \(f(x)\) is lsc if and only if \(-f(x)\) is usc, to show that \(h(x)\) is usc is to show that \(-h(x)\) is usc.
 
 
+\begin{align*}
+  -h(x) = 
+  -\inf\{f(y):y\in B(x)\} 
+  &= \sup\{-f(y):y\in B(x)\} \\
+  &= \sup\{\phi(y):y\in B(x)\}
+\end{align*}
+
+which is lsc by (1).
+
+Thus, we can see that \(h(x)\) is usc on \(\R^n\).
+
+\dotfill
+
+(c)
+
+For the closed ball $\bar{B}  = \{y : |x - y| \leq r\}$, the same properties hold.
+
+\pagebreak
 
 \begin{Problem}[]{Zygmund p77 exercise 12}
   If $f(x)$, $x \in \mathbb{R}^1$, is continuous at almost every point of an interval $[a, b]$, show that $f$ is measurable on $[a, b]$. 
@@ -63,15 +154,25 @@ usc
 
     \end{Problem}
 
-    Assume $f(x)$ is continuous at almost every point of $[a, b]$. Let
-$E = \{x \in [a, b] : f$ is continuous at $x\}$.
-Let $Z = [a, b] \setminus E$. Then $|Z| = 0$. Note that $Z$ is measurable, and
-$E = [a, b] \setminus Z$ is measurable too.
+    Since $f(x)$ is continuous at almost every point of $[a, b]$,
+    
+    there exists \(Z\subset [a,b]\) and s.t. $|Z| = 0$ and \(f\) is continuous on \(E = [a,b]\setminus Z\).
+
+
+Note that $Z$ is measurable, and
+$E = [a, b] \setminus Z$ is also measurable.
+
+
 For any finite $\alpha$, we have
-$\{x \in [a, b] : f(x) > \alpha\} = \{x \in E : f(x) > \alpha\} \cup \{x \in Z : f(x) > \alpha\}$.
+
+\[\{x \in [a, b] : f(x) > \alpha\} = \{x \in E  : f(x) > \alpha\} \sqcup \{x \in Z  : f(x) > \alpha\}.\]    
+
+
 Note that $\{x \in E : f(x) > \alpha\}$ is measurable since $f$ is continuous, thus
 measurable on $E$.
-Since $\{x \in Z : f(x) > \alpha\} \subset Z$, thus $|\{x \in Z : f(x) > \alpha\}| = 0$. Hence
+
+
+Since $\{x \in Z : f(x) > \alpha\} \subseteq Z$, thus $|\{x \in Z : f(x) > \alpha\}| = 0$, implying that
 $\{x \in Z : f(x) > \alpha\}$ is also measurable.
 Thus $\{x \in [a, b] : f(x) > \alpha\}$ is measurable. This means $f$ is measurable
 on $[a, b]$.
@@ -84,15 +185,55 @@ Let $\{f_k\}$ be a sequence of measurable functions defined on a measurable set 
 
   \end{Problem}
 
-  Let $\epsilon > 0$. For each $n \in \mathbb{N}$, define
-  \[ E_n := \left\{x \in E : |f_k(x)| \leq n \text{ for all } k\right\} = \bigcap_{k=1}^{\infty} \left\{x \in E : |f_k(x)| \leq n\right\}.\]
+  Let 
   
-  Note that each $E_n$ is measurable since each $f_k$ is measurable.
-  Since each $M_x < \infty$, we have that $E_n \subseteq E$. By the Monotone Convergence Theorem for measure, $\lim_{n \to \infty} |E_n| = |E| < \infty$. Thus, there exists $N$ such that
+  \[ E_m := \left\{ |f_k(x)| \leq m , \forall  k\in \mathbb{N} \right\} = \bigcap_{k=1}^{\infty} \left\{ |f_k(x)| \leq m\right\}.\]
+
+  Notice that \(E_M\) being measurable implies that its complement \(E_M^c\) is measurable (By Thm 3.17).
+
+  Since \(E_m\nearrow \), and \(\forall x\in E, \exists M_x\) s.t 
+
+  \[x\in \{|f_k(x)|\leq M_x\, \forall k \in \mathbb{N} \} = E_{M_x}\]
+  
+  We have \(E_m\to E\). Hence, by Thm 3.26, we have \(\lim_{m\to\infty}|E_m| = |E| < +\infty\).
+
+
+
+  Thus, \(\forall \epsilon > 0\), there exists \(M < \infty\), s.t. \(\{|f_k(x)|\leq M\}\) for all k and all \(x\in E_M\), and
+
   \[ |E| - |E_M| = |E \setminus E_M| < \epsilon/2.\]
   
-  Let $F$ be a closed set contained in $E_M$ such that $|E_M \setminus F| < \epsilon/2$.
-  Then $|E \setminus F| = |E \setminus E_M| + |E_M \setminus F| < \epsilon$, and $|f_k(x)| \leq N$ for all $k$ and all $x \in F$.
+  Since \(f_k\) is measurable, by Thm 4.1, we have \(\left\{ |f_k(x)| \leq m\right\}\) measurable for all \(k\), thus, by Thm 3.18, \( E_m = \bigcap_{k=1}^{\infty} \left\{ |f_k(x)| \leq m\right\}\).
+
+
+  For the measurable \(E_M^c\), given \(\epsilon>0\), there exists an open set \(G\) s.t. 
+
+  \[E_M^c \subset G \text{ and } |G \setminus E_M^c| < \epsilon/2.\]
+
+  Let \(F = G^c\) be a close set, we have
+
+  \[F \subset E_M \text{ and }  |E_M  \setminus  F| = |E_M  \setminus  G^c| < \epsilon/2.\]
+
+
+  Then, 
+
+  \[|E \setminus F| = |E \setminus E_M| + |E_M \setminus F| < \epsilon\]
+
+  and $|f_k(x)| \leq M$ for all $k$ and all $x \in F$ as required.  
+
+
   
+  \begin{mybox}{}
+    
+    \setcounter{section}{3}
+    \setcounter{theorem}{25}
+      \begin{theorem}
+        Let $\{E_k\}_{k=1}^{\infty}$ be a sequence of measurable sets.
+        \begin{enumerate}[label=(\roman*)]
+          \item If $E_k \subset E$, then $\lim_{k\to\infty} |E_k| = |E|$.
+          \item If $E_k \supset E$ and $|E_k| < +\infty$ for some $k$, then $\lim_{k\to\infty} |E_k| = |E|$.
+        \end{enumerate}
+        \end{theorem}
+      \end{mybox}
 
 \end{document}
