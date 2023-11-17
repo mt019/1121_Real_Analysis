@@ -58,14 +58,14 @@ By Riemann-Lebesgue Lemma, we have
 % \begin{align*}
 % % \lim_{n\to \infty}\int_{I}\cos(2nx)\cos(v_{n})- \lim_{n\to \infty}\int_{I}\sin(2nx)\sin(v_{n}) = 0.
 % \end{align*}
-
+Thus,
 \begin{align*}
   \lim_{n\to \infty}\int_{I} f_n &=  \lim_{n\to \infty}\int_{I}\frac{1}{2} + \frac{1}{2} \lim_{n\to \infty}\int_{I}\cos(2nx)\cos(v_{n})-\frac{1}{2} \lim_{n\to \infty}\int_{I}\sin(2nx)\sin(v_{n})\\
   & = \lim_{n\to \infty}\int_{I}\frac{1}{2} + 0 + 0\\
   & = \frac{1}{2}|I|.
 \end{align*}
 
-Thus,
+
 
 \begin{mybox}{}
   \begin{align*}
@@ -131,7 +131,7 @@ By Egorov's Theorom, this implies that \(A_n(x)\to 0\) uniformly on some \(E'\su
 \begin{align*}
   r_n \cos(nx - \theta_n) &\overset{u}{\to} 0 &&\text{on \(E'\)}\\
   r_n^2 \cos^2(nx - \theta_n) &\overset{u}{\to} 0 &&\text{on \(E'\)}\\
-  \Rightarrow r_n^2 \int_{E'}  \cos^2(nx - \theta_n) =  \int_{E'} r_n^2 \cos^2(nx - \theta_n) &\overset{u}{\to} 0.
+  \Rightarrow r_n^2 \int_{E'}  \cos^2(nx - \theta_n) =  \int_{E'} r_n^2 \cos^2(nx - \theta_n) &\to 0.
 \end{align*}
 
 By P.01, \(\int_{E'}\cos^2(nx-\theta_n)\to \frac{1}{2}|E'|\). It is necessary that \(r_n^2\to 0\), implying that \(a_n, b_n\to 0\), as required.

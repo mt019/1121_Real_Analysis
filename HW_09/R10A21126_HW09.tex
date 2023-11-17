@@ -1,0 +1,140 @@
+\documentclass[UTF8,a4paper,10pt]{article}
+
+% \begin{equation*}
+%   \begin{aligned}
+%   \end{aligned}
+% \end{equation*}
+
+% \begin{mybox}{}
+% \end{mybox}
+
+
+% \begin{Problem}[]{}
+% \end{Problem}
+
+% \begin{solution}\,
+% \end{solution}
+  
+
+% \begin{enumerate}[label=(\alph*)]
+% \end{enumerate} 
+
+% \setcounter{section}{3} 
+% \setcounter{theorem}{3}
+
+% \begin{theorem}\label{thm:3.4}
+%   If $E = \bigsqcup_{k} E_k$ is a countable union of sets, then $|E|_e \leq \sum_{k} |E_k|_e$.
+%   \end{theorem}
+
+%  \footcite[][42]{Wheeden_Zygmund_2015}
+
+\input{preamble.tex}
+
+\begin{document}
+
+
+
+
+\begin{mybox}{}
+
+  Let \(f\) be any measurable function defined on a set \(E\). If $f$ exists and is finite, we say that $f$ is Lebesgue integrable, or simply integrable, on $E$ and write $f \in L(E)$. Thus,
+\[
+L(E) = \left\{ f : \int_{E} f \text{ is finite} \right\}.
+\]
+\end{mybox}
+
+\begin{mybox}{Theorem 5.5}
+
+% \textbf{Theorem 5.5}
+\begin{enumerate}[label=(\roman*)]
+    \item If $f$ and $g$ are measurable and $0 \leq g \leq f$ on $E$, then $\int_E g \leq \int_E f $. In particular, $\int_E (\inf f) \leq \int_E f$.
+    \item If $f$ is nonnegative and measurable on $E$ and $\int_E f$ is finite, then $f < +\infty$ a.e. in $E$.
+    \item Let $E_1$ and $E_2$ be measurable and $E_1 \subset E_2$. If $f$ is nonnegative and measurable on $E_2$, then $\int_{E_1} f \leq \int_{E_2} f$.
+\end{enumerate}
+
+\textbf{Proof:} 
+
+Parts (i) and (iii) follow from the relations $R(g, E) \subset R(f, E)$ and $R(f, E_1) \subset R(f, E_2)$, respectively. 
+
+To prove (ii), we may assume that $|E| > 0$. If $f = +\infty$ in a subset $E_1$ of $E$ with positive measure, then by (iii) and (i), we have $\int_E f \geq \int_{E_1} f \geq \int_{E_1} a = a|E_1|$, no matter how large $a$ is. This contradicts the finiteness of $\int_E f$.
+\end{mybox}
+
+
+\begin{mybox}{Theorem 5.22}
+
+  If $f \in L(E)$, then $f$ is finite a.e. in $E$.
+
+\textbf{Proof:} If $f \in L(E)$, then $|f| \in L(E)$, and the result follows from Theorem 5.5(ii).
+
+\end{mybox}
+
+
+\begin{mybox}{Theorem 5.36 (Lebesgue's Dominated Convergence Theorem)}
+
+  Let $\{f_k\}$ be a sequence of measurable functions on $E$ such that $f_k \to f$ a.e. in $E$. If there exists $\phi \in L(E)$ such that $|f_k| \leq \phi$ a.e. in $E$ for all $k$, then $\int_E f_k  \to \int_E f $.
+
+\end{mybox}
+
+\pagebreak
+
+\begin{Problem}[]{Zygmund p109 exercise 04}
+
+  
+  If $f \in L(0, 1)$, show that $x^kf(x) \in L(0, 1)$ for $k = 1, 2, \ldots$, and that
+\[
+\int_{0}^{1} x^kf(x) \,dx \rightarrow 0.
+\]
+
+\end{Problem}
+
+Let \(g_k(x)=x^kf(x)\) and \(E = (0,1)\). We have
+\(g_k(x)\) measurable on \(E\), thus \(\int_{E} g_k\) exists.
+
+For \( x\in (0,1)\), \(x_k \leq 1\), so \(g(x) = x^kf(x)\leq f(x), \forall k\in \mathbb{N} \).
+Hence, 
+\[\int_{E}g_k \leq \int_{E}f<\infty,\]
+implying that \(g_k(x) = x^kf(x) \in L(0, 1)\). 
+
+\dotfill
+
+Since \(f\in L(E)\), \(f\) is finite a.e. in \(E\).
+
+Besides, for all \(x\in E\), \(x^k\to 0\), as \(k\to\infty\).
+
+Thus, \(g_k(x) = x^k f(x) \to 0\) a.e in \(E\). 
+Additionally, \(|g_k| \leq |f|\), while \(f \in L(E)\). Therefore, by Theorem 5.36 (Lebesgue's Dominated Convergence Theorem), we have
+\[\int_{E} g_k(x) \, dx \to \int_{E} 0 \, dx = 0.\]
+
+\begin{Problem}[]{Zygmund p109 exercise 05}
+
+  
+  Use Egorov's theorem to prove the bounded convergence theorem.
+
+\end{Problem}
+
+\begin{Problem}[]{Zygmund p109 exercise 06}
+
+
+
+Let $f(x, y)$, $0 \leq x, y \leq 1$, satisfy the following conditions: for each $x$, $f(x, y)$ is an integrable function of $y$, and $\dfrac{\partial f(x, y)}{\partial x}$ is a bounded function of $(x, y)$. Show that $\dfrac{\partial f(x, y)}{\partial x}$ is a measurable function of $y$ for each $x$ and
+\[
+\frac{d}{dx} \int_{0}^{1} f(x, y) \,dy = \int_{0}^{1} \frac{\partial}{\partial x} f(x, y) \,dy.
+\]
+
+\end{Problem}
+
+
+\begin{Problem}[]{Zygmund p109 exercise 09}
+  If $p > 0$ and $|f - f_k|^p \rightarrow 0$ as $k \rightarrow \infty$, show that $f_k \overset{m}{\longrightarrow} f$ on $E$ (and thus that there is a subsequence $f_{k_j} \rightarrow f$ a.e. in $E$).
+
+
+\end{Problem}
+
+\begin{Problem}[]{Zygmund p109 exercise 10}
+
+  If $p > 0$, $|f - f_k|^p \rightarrow 0$, and $|f_k|^p \leq M$ for all $k$, show that $|f|^p \leq M$.
+
+\end{Problem}
+
+
+\end{document}
