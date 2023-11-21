@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.8.25)  17 NOV 2023 23:02
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.8.25)  21 NOV 2023 19:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1325,9 +1325,9 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 40.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-] 
+] [2] [3] 
 AED: lastpage setting LastPage
-[2] (./R10A21126_HW09.aux)
+[4] (./R10A21126_HW09.aux)
 Package rerunfilecheck Info: File `R10A21126_HW09.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package logreq Info: Writing requests to 'R10A21126_HW09.run.xml'.
@@ -1335,12 +1335,12 @@ Package logreq Info: Writing requests to 'R10A21126_HW09.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 53958 strings out of 475848
- 1283104 string characters out of 5801585
- 2212426 words of memory out of 5000000
- 74249 multiletter control sequences out of 15000+600000
+ 53970 strings out of 475848
+ 1283306 string characters out of 5801585
+ 2214426 words of memory out of 5000000
+ 74261 multiletter control sequences out of 15000+600000
  473385 words of font info for 54 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  104i,11n,107p,726b,3846s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on R10A21126_HW09.pdf (2 pages).
+Output written on R10A21126_HW09.pdf (4 pages).

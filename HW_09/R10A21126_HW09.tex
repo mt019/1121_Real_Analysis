@@ -102,15 +102,105 @@ Since \(f\in L(E)\), \(f\) is finite a.e. in \(E\).
 Besides, for all \(x\in E\), \(x^k\to 0\), as \(k\to\infty\).
 
 Thus, \(g_k(x) = x^k f(x) \to 0\) a.e in \(E\). 
-Additionally, \(|g_k| \leq |f|\), while \(f \in L(E)\). Therefore, by Theorem 5.36 (Lebesgue's Dominated Convergence Theorem), we have
+Additionally, \(|g_k| \leq |f|\), while \(f \in L(E)\). 
+
+Therefore, by Theorem 5.36 (Lebesgue's Dominated Convergence Theorem), we have
 \[\int_{E} g_k(x) \, dx \to \int_{E} 0 \, dx = 0.\]
 
-\begin{Problem}[]{Zygmund p109 exercise 05}
+\pagebreak
 
+\begin{Problem}[]{Zygmund p109 exercise 05}
   
   Use Egorov's theorem to prove the bounded convergence theorem.
 
 \end{Problem}
+
+\begin{mybox}{}
+
+  Given \(f\in L(E)\), \(\forall \epsilon > 0, \exists  \delta > 0,\) s.t. \(\forall F \subseteq E\) with \(|F|<\delta\), \(\int_{F}|f|<\epsilon\).
+
+\end{mybox}
+
+By Egorov's Theorem, 
+
+given \(\epsilon>0\), find a closed subset \(F\) of \(E\) such that 
+\begin{itemize}
+  \item \(|E\setminus F|<\delta_\epsilon\), thus \(\int_{E\setminus F} f <\epsilon\);
+  \item  and \(f_k\overset{u}{\to}f\) on \(F\), thus \(\int_F f_k \to \int_F f\) (By Uniform Convergence Theorem).
+\end{itemize}
+
+Additionally, since there is a finite constant $M$ such that $|f_k| \leq M$ a.e. in $E$, then $|f_k| \leq M$ a.e. in $E\setminus F$, implying that
+\[
+  \int_{E\setminus F} f_k \leq \int_{E\setminus F} M = M |E\setminus F| \leq M\delta_{\epsilon}.
+\]
+
+Hence,
+
+\begin{align*}
+  \int_{E} f - \int_{E} f_k &= \left(\int_{F} f+\int_{E\setminus F} f\right) -  \left(\int_{F} f_k + \int_{E\setminus F} f_k\right)\\
+  &= \left(\int_{F} f-\int_{F} f_k \right)+\left(\int_{E\setminus F} f- \int_{E\setminus F} f_k \right)\\
+  &\leq \left(\int_{F} f-\int_{F} f_k \right)+\left(\int_{E\setminus F} f + \int_{E\setminus F} f_k\right)
+\end{align*}
+
+It follows that:
+\begin{align*}
+  \lim_{k\to \infty}\left| \int_{E} f - \int_{E} f_k \right| 
+  &\leq \lim_{k\to \infty}\left|\int_{F} f-\int_{F} f_k \right| +\left(\epsilon + M\delta_{\epsilon}\right)\\
+  & = \epsilon + M\delta_{\epsilon}.
+\end{align*}
+
+Choose \(\delta_{\epsilon} \leq \frac{\epsilon}{M}\), then
+\(\lim_{k\to \infty}\left| \int_{E} f - \int_{E} f_k \right| \leq 2\epsilon\). 
+
+Letting \(\epsilon\to 0\), we can conclude that \(\int_{E} f \to \int_{E} f_k \).
+
+\pagebreak
+
+\begin{mybox}{Corollary 5.37 (Bounded Convergence Theorem)}
+
+    Let $f_k$ be a sequence of measurable functions on $E$ such that $f_k \to f$ a.e. in $E$. If $|E| < +\infty$ and there is a finite constant $M$ such that $|f_k| \leq M$ a.e. in $E$, then
+    \[
+      \int_E f_k \,\to \int_E f .
+    \]
+
+\pagebreak
+
+\end{mybox}
+
+\begin{mybox}{Theorem 4.17 (Egorov's Theorem)}
+
+  Suppose that $\{f_k\}$ is a sequence of measurable functions that converges almost everywhere in a set $E$ of finite measure to a finite limit $f$. Then, given $\varepsilon > 0$, there is a closed subset $F$ of $E$ such that $|E - F| < \varepsilon$ and $\{f_k\}$ converge uniformly to $f$ on $F$.
+
+\end{mybox}
+
+\begin{mybox}{Theorem 5.23}
+\begin{enumerate}
+  \item[(i)] If both $\int_E f$ and $\int_E g$ exist, and if $f \leq g$ a.e. in $E$, then $\int_E f \leq \int_E g$. Moreover, if $f$ and $g$ are functions with $f = g$ a.e. in $E$ and $\int_E f$ exists, then $\int_E g$ exists, and $\int_E f = \int_E g$.
+
+  \item[(ii)] If $\int_{E_2} f$ exists and $E_1$ is a measurable subset of $E_2$, then $\int_{E_1} f$ exists.
+\end{enumerate}
+\end{mybox}
+
+\begin{mybox}{Theorem 5.24}
+
+  If $\int_E f$ exists and $E = \bigcup_k E_k$ is the countable union of disjoint measurable sets $E_k$, then
+  \[
+    \int_E f = \sum_k \int_{E_k} f.
+  \]
+  
+  \end{mybox}
+
+\begin{mybox}{Theorem 5.33 (Uniform Convergence Theorem)}
+  Let $f_k \in L(E)$ for $k = 1, 2, \ldots$, and let $\{f_k\}$ converge uniformly to $f$ on $E$ where $|E| < +\infty$. Then $f \in L(E)$ and
+  \[
+    \int_E f_k \to \int_E f .
+  \]
+
+\end{mybox}
+
+
+
+
 
 \begin{Problem}[]{Zygmund p109 exercise 06}
 
@@ -124,15 +214,12 @@ Let $f(x, y)$, $0 \leq x, y \leq 1$, satisfy the following conditions: for each 
 \end{Problem}
 
 
-\begin{Problem}[]{Zygmund p109 exercise 09}
-  If $p > 0$ and $|f - f_k|^p \rightarrow 0$ as $k \rightarrow \infty$, show that $f_k \overset{m}{\longrightarrow} f$ on $E$ (and thus that there is a subsequence $f_{k_j} \rightarrow f$ a.e. in $E$).
+\begin{Problem}[]{Zygmund p109 exercise 09-10}
+  \begin{itemize}
+    \item   If $p > 0$ and $|f - f_k|^p \rightarrow 0$ as $k \rightarrow \infty$, show that $f_k \overset{m}{\longrightarrow} f$ on $E$ (and thus that there is a subsequence $f_{k_j} \rightarrow f$ a.e. in $E$).
+    \item   If $p > 0$, $|f - f_k|^p \rightarrow 0$, and $|f_k|^p \leq M$ for all $k$, show that $|f|^p \leq M$.
 
-
-\end{Problem}
-
-\begin{Problem}[]{Zygmund p109 exercise 10}
-
-  If $p > 0$, $|f - f_k|^p \rightarrow 0$, and $|f_k|^p \leq M$ for all $k$, show that $|f|^p \leq M$.
+  \end{itemize}
 
 \end{Problem}
 
