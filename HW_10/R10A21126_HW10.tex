@@ -1,0 +1,57 @@
+\documentclass[UTF8,a4paper,10pt]{article}
+
+% \begin{equation*}
+%   \begin{aligned}
+%   \end{aligned}
+% \end{equation*}
+
+% \begin{mybox}{}
+% \end{mybox}
+
+
+% \begin{Problem}[]{}
+% \end{Problem}
+
+% \begin{solution}\,
+% \end{solution}
+  
+
+% \begin{enumerate}[label=(\alph*)]
+% \end{enumerate} 
+
+% \setcounter{section}{3} 
+% \setcounter{theorem}{3}
+
+% \begin{theorem}\label{thm:3.4}
+%   If $E = \bigsqcup_{k} E_k$ is a countable union of sets, then $|E|_e \leq \sum_{k} |E_k|_e$.
+%   \end{theorem}
+
+%  \footcite[][42]{Wheeden_Zygmund_2015}
+
+\input{preamble.tex}
+
+\begin{document}
+
+
+\begin{Problem}[]{Zygmund p111 exercise 28}
+  Let $E$ be a measurable set in $\mathbb{R}^n$ with $|E| < \infty$. Suppose that $f > 0$ a.e. in $E$ and $f, \log f \in L^1(E)$. Prove that
+\[
+\lim_{{p \to 0^+}} \left( \frac{1}{|E|} \int_E f^p \,dx \right)^{1/p} = \exp\left(\frac{1}{|E|} \int_E \log f \,dx\right).
+\]
+(Start by using Theorem 5.36 to show that $\int_E f^p \,dx \to |E|$ as $p \to 0^+$. Note that $\int_E (f^p - 1)^{1/p} \,dx \to \log f$.)
+
+\end{Problem}
+
+
+\begin{Problem}[]{Zygmund p111 exercise 29}
+  Let $f$ be measurable, nonnegative, and finite a.e. in a set $E$. Prove that for any nonnegative constant $c$,
+\[
+\int_E e^{cf(x)} \,dx = |E| + c \int_0^\infty e^{c\alpha} \omega f(\alpha) \,d\alpha.
+\]
+Deduce that $e^{cf} \in L^1(E)$ if $|E| < \infty$ and there exist constants $C_1$ and $c_1$ such that $c_1 > c$ and $\omega f(\alpha) \leq C_1e^{-c_1\alpha}$ for all $\alpha > 0$. We will study such an exponential integrability property in Section 14.5.
+
+\end{Problem}
+
+
+
+\end{document}
