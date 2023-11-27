@@ -1,6 +1,6 @@
 \documentclass[UTF8,a4paper,10pt]{article}
 
-% \begin{equation*}
+% \begin{equation**}
 %   \begin{aligned}
 %   \end{aligned}
 % \end{equation*}
@@ -36,21 +36,159 @@
 \begin{Problem}[]{Zygmund p111 exercise 28}
   Let $E$ be a measurable set in $\mathbb{R}^n$ with $|E| < \infty$. Suppose that $f > 0$ a.e. in $E$ and $f, \log f \in L^1(E)$. Prove that
 \[
-\lim_{{p \to 0^+}} \left( \frac{1}{|E|} \int_E f^p \,dx \right)^{1/p} = \exp\left(\frac{1}{|E|} \int_E \log f \,dx\right).
+\lim_{{p \to 0^+}} \left( \frac{1}{|E|} \int_E f^p  \right)^{1/p} = \exp\left(\frac{1}{|E|} \int_E \log f \right).
 \]
-(Start by using Theorem 5.36 to show that $\int_E f^p \,dx \to |E|$ as $p \to 0^+$. Note that $\int_E (f^p - 1)^{1/p} \,dx \to \log f$.)
+(Start by using Theorem 5.36 to show that $\int_E f^p  \to |E|$ as $p \to 0^+$. Note that $\int_E (f^p - 1)^{1/p}  \to \log f$.)
 
 \end{Problem}
 
+
+\begin{mybox}{Theorem 5.36 (Lebesgue's Dominated Convergence Theorem)}
+
+  Let $\{f_k\}$ be a sequence of measurable functions on $E$ such that $f_k \to f$ a.e. in $E$. If there exists $\phi \in L(E)$ such that $|f_k| \leq \phi$ a.e. in $E$ for all $k$, then $\int_E f_k  \to \int_E f $.
+
+\end{mybox}
+
+\begin{mybox}{Theorem 5.32 (Monotone Convergence Theorem)}
+   Let $\{f_k\}$ be a sequence of measurable functions on $E$:
+  \begin{enumerate}
+      \item If $f_k \nearrow f$ a.e. on $E$ and there exists $\phi \in L(E)$ such that $f_k \geq \phi$ a.e. on $E$ for all $k$, then 
+      \[
+          \int_E f_k  \to \int_E f .
+      \]
+      \item If $f_k \searrow f$ a.e. on $E$ and there exists $\phi \in L(E)$ such that $f_k \leq \phi$ a.e. on $E$ for all $k$, then 
+      \[
+          \int_E f_k  \to \int_E f .
+      \]
+  \end{enumerate}
+\end{mybox}
+
+% \[f_p = f^p\searrow 1, as p\to 0^+\]
+
+Since \(f_p = f^p \searrow 1 \) in \(E\) as \( p \to 0^+ \), and let \(|f_p|\leq \phi = \max\{f, f_p\}\) in \(E\) for \(p<1\), thus we have
+$$\int_E f_p  \to \int_E 1 = |E|, $$ 
+as $p \to 0^+$.
+
+Let
+\[h_p = \frac{f^p-1}{p}
+% \overset{p.w}{\longrightarrow }\log f
+\]
+\begin{align*}
+  h_p = \chi_{(0,1]}h_p + \chi_{(1,\infty)}h_p \searrow \log f
+\end{align*}
+By Monotone Convergence Theorem, as $p \to 0^+$,
+\[\int_E h_p  \to \int_E \log f,\]
+Thus,\[g_p = \dfrac{1}{|E|}\int_E \frac{f^p-1}{p}  \to \dfrac{1}{|E|}\int_E \log f.\]
+
+\begin{align*}
+  p\cdot g_p 
+  &= p\cdot\dfrac{1}{|E|}\int_E \frac{f^p-1}{p}\\
+  &= \dfrac{1}{|E|}\int_E (f^p-1)\\
+  &= \underset{\to 1}{\underbrace{\dfrac{1}{|E|}\int_E f^p} } -  \underset{\to 1}{\underbrace{\dfrac{1}{|E|}\int_E 1 }}\\
+  &\to 0.
+\end{align*}
+
+\begin{align*}
+  \lim_{{p \to 0^+}} \left( \frac{1}{|E|} \int_E f^p  \right)^{1/p}  &=  \lim_{{p \to 0^+}} \left( p\cdot g_k +1\right)^{1/p}  \\
+  &= \lim_{{p \to 0^+}} \exp\left\{g_p\log\left[(p \cdot g_p + 1)^{\dfrac{1}{p\cdot g_p}}\right]\right\}\\
+  &=  \exp\left\{ \lim_{{p \to 0^+}} g_p\log\left[(p \cdot g_p + 1)^{\dfrac{1}{p\cdot g_p}}\right]\right\}\\
+  &= \exp\left(\frac{1}{|E|} \int_E \log f \right)，
+\end{align*}
+as required.
+
+The last equation is followed by
+\begin{align*}
+  \lim_{{p \to 0^+}} \log\left[(p \cdot g_p + 1)^{\dfrac{1}{p\cdot g_p}}\right] &= \log[e] & \because e := \lim_{n\to\infty}\left(1+\frac{1}{n}\right)^n \\
+  &= 1,
+\end{align*}
+and
+\begin{align*}
+  \lim_{{p \to 0^+}} g_p 
+  &= \lim_{{p \to 0^+}} \dfrac{1}{|E|}\int_E \frac{f^p-1}{p} \\
+  &= \dfrac{1}{|E|}\int_E \log f. \quad\text{(By MCT}
+\end{align*}
+
+\pagebreak
 
 \begin{Problem}[]{Zygmund p111 exercise 29}
   Let $f$ be measurable, nonnegative, and finite a.e. in a set $E$. Prove that for any nonnegative constant $c$,
 \[
-\int_E e^{cf(x)} \,dx = |E| + c \int_0^\infty e^{c\alpha} \omega f(\alpha) \,d\alpha.
+\int_E e^{cf(x)}  = |E| + c \int_0^\infty e^{c\alpha} \omega f(\alpha) \,d\alpha.
 \]
 Deduce that $e^{cf} \in L^1(E)$ if $|E| < \infty$ and there exist constants $C_1$ and $c_1$ such that $c_1 > c$ and $\omega f(\alpha) \leq C_1e^{-c_1\alpha}$ for all $\alpha > 0$. We will study such an exponential integrability property in Section 14.5.
 
 \end{Problem}
+
+
+\begin{mybox}{Zygmund p97 Distribution function}
+  \begin{equation*}
+    \omega(\alpha) = \omega_{f,E}(\alpha) = \left| \{ x \in E : f(x) > \alpha \} \right|,
+    \end{equation*}
+    where \(f\) is a measurable function on \(E\) and \(-\infty < \alpha < +\infty\). We call \(\omega_{f,E}\) the distribution function of \(f\) on \(E\).
+    
+\end{mybox}
+
+
+Let \(\phi\) be an arbitrary once continuously differentiable function s.t. \(\phi(0) = 1\).
+
+It is to be shown that
+\begin{align*}
+  \int_E \phi(f(x)) = |E| + \int_0^\infty \phi'(f(x))\omega f(\alpha) \,d\alpha.
+\end{align*}
+
+\begin{align*}
+  \int_0^\infty \phi'(f(x))\omega f(\alpha) \,d\alpha 
+  &= \int_0^\infty \phi'(f(x))\int_E \chi_{ \{ x \in E : f(x) > \alpha \} }\,dx \,d\alpha\\
+  &= \int_E \int_0^{f(x)} \phi'(\alpha)\,d\alpha\,dx \\
+  &= \int_E \left[\phi(f(x))-\phi(0)\right]\,dx \\
+  &= \int_E \left[\phi(f(x))-1\right]\,dx \\
+  &= \int_E \phi(f(x))\,dx - |E| \\
+\end{align*}
+Thus,
+\[  \int_E \phi(f(x)) = |E| + \int_0^\infty \phi'(f(x))\omega f(\alpha) \,d\alpha.\]
+
+
+
+Let 
+\begin{align*}
+  \phi(\alpha) &:= e^{c\alpha},\\
+  \phi(f(x)) &= e^{cf(x)},\\
+  \phi'(f(x)) &= c\cdot e^{cf(x)}
+\end{align*}
+
+We have
+\[
+\int_E e^{cf(x)}  = |E| + c \int_0^\infty e^{c\alpha} \omega f(\alpha) \,d\alpha,
+\]
+as required.
+
+---
+
+Under the assumption that
+$|E| < \infty$ and there exist constants $C_1$ and $c_1$ such that $c_1 > c$ and 
+
+$\omega f(\alpha) \leq C_1e^{-c_1\alpha}$ for all $\alpha > 0,$
+
+We have 
+\begin{align*}
+  e^{c_1\alpha}\omega f(\alpha) &\leq C_1\\
+  e^{c\alpha}\omega f(\alpha) &\leq C_1  e^{(c-c_1)\alpha}.
+\end{align*}
+Let \(k = c_1-c  > 0\),
+\begin{align*}
+  \int_{0}^{\infty} C_1 e^{-k\alpha}\,d\alpha &= C_1 \int_{0}^{\infty}  e^{-k\alpha}\,d\alpha\\
+  & = C_1 \left(-\frac{1}{k}\right)\left(\lim_{\beta\to \infty} e^{-k\beta} - \lim_{\alpha\to 0} e^{-k\alpha}  \right)\\
+  & = C_1 \left(-\frac{1}{k} \right)\left(0-1\right)\\
+  & = \frac{C_1}{c_1-c}<\infty.
+\end{align*}
+Therefore, 
+
+\begin{align*}
+  \int_E e^{cf(x)}  &= \underset{<\infty}{\underbrace{|E|}} + c \underset{<\infty}{\underbrace{\int_0^\infty e^{c\alpha} \omega f(\alpha) \,d\alpha}}\\
+  &<\infty.
+\end{align*}
+
+We can conclude that \(e^{cf}\in L(E)\), as required.
 
 
 
