@@ -1,0 +1,141 @@
+\documentclass[UTF8,a4paper,10pt]{article}
+
+% \begin{equation**}
+%   \begin{aligned}
+%   \end{aligned}
+% \end{equation*}
+
+% \begin{mybox}{}
+% \end{mybox}
+
+
+% \begin{Problem}[]{}
+% \end{Problem}
+
+% \begin{solution}\,
+% \end{solution}
+  
+
+% \begin{enumerate}[label=(\alph*)]
+% \end{enumerate} 
+
+% \setcounter{section}{3} 
+% \setcounter{theorem}{3}
+
+% \begin{theorem}\label{thm:3.4}
+%   If $E = \bigsqcup_{k} E_k$ is a countable union of sets, then $|E|_e \leq \sum_{k} |E_k|_e$.
+%   \end{theorem}
+
+%  \footcite[][42]{Wheeden_Zygmund_2015}
+
+\input{preamble.tex}
+
+\begin{document}
+
+\begin{mybox}{Theorems 5.16}
+  If $f_k$, $k = 1, 2, \ldots$, are nonnegative and measurable, then
+\[
+  \int_E \left(\sum_{k=1}^{\infty} f_k\right) = \sum_{k=1}^{\infty} \int_E f_k.
+\]
+
+\textbf{Proof.}
+The functions $F_N$ defined by $F_N = \sum_{k=1}^{N} f_k$ are nonnegative and measurable, and increase to $\sum_{k=1}^{\infty} f_k$. Hence,
+\[
+  \int_E \left(\sum_{k=1}^{\infty} f_k\right)= \lim_{N \to \infty} \int_E  F_N = \lim_{N \to \infty}\sum_{k=1}^{N} f_k = \sum_{k=1}^{\infty} \int_E f_k.
+\]
+\end{mybox}
+
+\begin{mybox}{Theorem 5.22}
+
+If $f \in L(E)$, then $f$ is finite almost everywhere in $E$.
+
+\end{mybox}
+
+\begin{mybox}{}
+  A series $\sum a_n$ is called absolutely convergent if $\sum |a_n|$ is convergent. 
+  
+  If $\sum a_n$ is convergent and $\sum |a_n|$ is divergent, we call the series conditionally convergent.
+
+\end{mybox}
+
+\begin{mybox}{The Monotone Convergence Criterion for Real Sequences (Real-Analysis-4th-Ed-Royden)}
+  \textbf{Theorem 15:} A monotone sequence of real numbers converges if and only if it is bounded.
+
+\end{mybox}
+
+\begin{Problem}[]{Zygmund p109 exercise 13}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $\{f_k\}$ be a sequence of measurable functions on $E$. Show that $\sum_{k} |f_k|$ converges absolutely a.e. in $E$ if $\sum_{k} \int_E |f_k| < +\infty$. (Use Theorems 5.16 and 5.22.)
+  % \item If $\{r_k\}$ denotes the rational numbers in $[0,1]$ and $\{a_k\}$ satisfies $\int_{[0,1]} |a_k| \, d\lambda < +\infty$, show that $\int_{[0,1]} |a_k (x - r_k)|^{-1/2} \, d\lambda$ converges absolutely a.e. in $[0,1]$.
+
+\end{enumerate}
+\end{Problem}
+
+Since 
+\(|f_k|\) is nonnegative, and
+
+\[\sum_{k} \int_E |f_k| < +\infty,\]
+
+by Thm 5.16,
+
+\[
+  \int_E \left(\sum_{k=1}^{\infty} |f_k| \right) = \sum_{k=1}^{\infty} \int_E |f_k| <  +\infty,
+\]
+
+implying that \(  \sum_{k=1}^{\infty} |f_k| \in L(E)\).
+
+
+By Thm 5.22, \( \sum_{k=1}^{\infty} |f_k| \) is finite a.e in \(E\). Notice that \( \sum_{k=1}^{\infty} |f_k|\) is monotone increasing. We can conclude that \( \sum_{k=1}^{\infty} |f_k|\) converges a.e. in \(E\), by the Monotone Convergence Theorem for real sequences.
+
+
+
+
+
+
+\pagebreak
+
+
+\begin{mybox}{}
+Given $\phi \geq 0$, let $L_{\phi}(E)$ denote the class of measurable functions $f$ such that $\phi(f) \in L(E)$. If $\phi(\alpha) = |\alpha|^p$, $0 < p < \infty$, the standard notation is
+\[
+L^p(E) = \left\{ f : \int_{E} |f|^p < +\infty \right\}, \quad 0 < p < \infty.
+\]
+Note that $L^1(E) = L(E)$. We will systematically study the $L^p$ classes in Chapter 8.
+
+\end{mybox}
+
+
+\begin{mybox}{Theorem 5.51}
+  
+If $0 < p < \infty$, $f \geq 0$, and $f \in L^p(E)$, then
+\[
+\int_{E} f^p = -\int_{0}^{\infty} \alpha^p \, d\omega(\alpha) = p \int_{0}^{\infty} \alpha^{p-1} \omega(\alpha) \, d\alpha,
+\]
+where the last integral may be interpreted as either a Lebesgue or an improper Riemann integral.
+
+\end{mybox}
+
+\begin{Problem}[]{Zygmund p109 exercise 16}
+
+  Suppose that $f$ is nonnegative and measurable on $E$, and $\omega$ is finite on $(0, \infty)$. Show that Theorem 5.51 holds without any further restrictions (i.e., $f$ need not be in $L^p(E)$ and $|E|$ need not be finite) if we interpret
+  \[
+  \int_{0}^{\infty} \alpha^p \, d\omega(\alpha) = \lim_{{a \to 0^+}\atop{b \to \infty}} \int_{a}^{b} .
+  \]
+  For the first part, use the sets $E_{ab}$ to obtain the relation
+  \[
+  \int_{E} f^p = -\int_{0}^{\infty} \alpha^p \, d\omega(\alpha).
+  \]
+  If either $\int_{0}^{\infty} \alpha^p \, d\omega(\alpha)$ or $\int_{0}^{\infty} \alpha^{p-1} \omega(\alpha) \, d\alpha$ is finite, use Lemma 5.50 and the results of Exercises 14 or 15 to integrate by parts.
+  
+  \end{Problem}
+
+
+  \begin{Problem}[]{Zygmund p110 exercise 18}
+
+    If $f \geq 0$, show that $f \in L^p$ if and only if $\sum_{k=-\infty}^{\infty} 2^{kp} \omega(2^k) < +\infty$. (Use Exercise 16.)
+
+
+    \end{Problem}
+  
+
+\end{document}
