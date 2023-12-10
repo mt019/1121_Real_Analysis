@@ -82,10 +82,14 @@ by Thm 5.16,
   \int_E \left(\sum_{k=1}^{\infty} |f_k| \right) = \sum_{k=1}^{\infty} \int_E |f_k| <  +\infty,
 \]
 
-implying that \(  \sum_{k=1}^{\infty} |f_k| \in L(E)\).
+we have \(  \sum_{k=1}^{\infty} |f_k| \in L(E)\).
 
 
-By Thm 5.22, \( \sum_{k=1}^{\infty} |f_k| \) is finite a.e in \(E\). Notice that \( \sum_{k=1}^{\infty} |f_k|\) is monotone increasing. We can conclude that \( \sum_{k=1}^{\infty} |f_k|\) converges a.e. in \(E\), by the Monotone Convergence Theorem for real sequences.
+By Thm 5.22, \( \sum_{k=1}^{\infty} |f_k| \) is finite a.e in \(E\). 
+
+Notice that \( \sum_{k=1}^{\infty} |f_k|\) is monotone increasing. 
+
+We can conclude that \( \sum_{k=1}^{\infty} |f_k|\) converges a.e. in \(E\), by the Monotone Convergence Theorem for real sequences.
 
 
 
@@ -115,19 +119,19 @@ where the last integral may be interpreted as either a Lebesgue or an improper R
 
 \end{mybox}
 
-\begin{Problem}[]{Zygmund p109 exercise 16}
+% \begin{Problem}[]{Zygmund p109 exercise 16}
 
-  Suppose that $f$ is nonnegative and measurable on $E$, and $\omega$ is finite on $(0, \infty)$. Show that Theorem 5.51 holds without any further restrictions (i.e., $f$ need not be in $L^p(E)$ and $|E|$ need not be finite) if we interpret
-  \[
-  \int_{0}^{\infty} \alpha^p \, d\omega(\alpha) = \lim_{{a \to 0^+}\atop{b \to \infty}} \int_{a}^{b} .
-  \]
-  For the first part, use the sets $E_{ab}$ to obtain the relation
-  \[
-  \int_{E} f^p = -\int_{0}^{\infty} \alpha^p \, d\omega(\alpha).
-  \]
-  If either $\int_{0}^{\infty} \alpha^p \, d\omega(\alpha)$ or $\int_{0}^{\infty} \alpha^{p-1} \omega(\alpha) \, d\alpha$ is finite, use Lemma 5.50 and the results of Exercises 14 or 15 to integrate by parts.
+%   Suppose that $f$ is nonnegative and measurable on $E$, and $\omega$ is finite on $(0, \infty)$. Show that Theorem 5.51 holds without any further restrictions (i.e., $f$ need not be in $L^p(E)$ and $|E|$ need not be finite) if we interpret
+%   \[
+%   \int_{0}^{\infty} \alpha^p \, d\omega(\alpha) = \lim_{{a \to 0^+}\atop{b \to \infty}} \int_{a}^{b} .
+%   \]
+%   For the first part, use the sets $E_{ab}$ to obtain the relation
+%   \[
+%   \int_{E} f^p = -\int_{0}^{\infty} \alpha^p \, d\omega(\alpha).
+%   \]
+%   If either $\int_{0}^{\infty} \alpha^p \, d\omega(\alpha)$ or $\int_{0}^{\infty} \alpha^{p-1} \omega(\alpha) \, d\alpha$ is finite, use Lemma 5.50 and the results of Exercises 14 or 15 to integrate by parts.
   
-  \end{Problem}
+%   \end{Problem}
 
 
   \begin{Problem}[]{Zygmund p110 exercise 18}
@@ -136,6 +140,54 @@ where the last integral may be interpreted as either a Lebesgue or an improper R
 
 
     \end{Problem}
-  
+
+
+    By Exercise 16, we have that if \(f\) is nonnegative and measurable on \(E\) and that \(\omega\) is finite on \((0,\infty)\), then 
+    \[
+      \int_{E} f^p = -\int_{0}^{\infty} \alpha^p \, d\omega(\alpha) = p \int_{0}^{\infty} \alpha^{p-1} \omega(\alpha) \, d\alpha.
+      \]
+    
+      That is, it suffices to show that $f \in L^p$ if and only if
+\[
+\int_{0}^{\infty} \alpha^{p-1}\omega(\alpha) \,d\alpha <\infty.
+\]
+
+
+Now observe that
+\[
+\int_{0}^{\infty} \alpha^{p-1}\omega(\alpha) \,d\alpha =
+\sum_{k=-\infty}^{\infty} \int_{2^k}^{2^{k+1}} \alpha^{p-1}\omega(\alpha)\,d\alpha.
+\]
+
+Since $\alpha^{p-1}$ is monotone increasing and $\omega(\alpha)$ is monotone decreasing, we have
+\[
+\int_{2^k}^{2^{k+1}} 2^{k(p-1)}\omega(2^{k+1}) \,d\alpha \leq
+\int_{2^k}^{2^{k+1}} \alpha^{p-1}\omega(\alpha) \leq
+\int_{2^k}^{2^{k+1}} 2^{(k+1)(p-1)}\omega(2^k).
+\]
+Simplifying, we get
+\begin{align*}
+  2^{k(p-1)+k}\omega(2^{k+1}) \,d\alpha &\leq
+\int_{2^k}^{2^{k+1}} \alpha^{p-1}\omega(\alpha) \leq
+2^{(k+1)(p-1)+k}\omega(2^k)\\
+2^{(k+1)p-p}\omega(2^{k+1}) \,d\alpha &\leq
+\int_{2^k}^{2^{k+1}} \alpha^{p-1}\omega(\alpha) \leq
+2^{kp+(p-1)}\omega(2^k).
+\end{align*}
+Therefore,
+\begin{align*}
+  &2^{-p}\sum_{k = -\infty}^{\infty}2^{kp}\omega(2^{k})\quad\text{(Since \(k\) ranges from \(-\infty\) to \(\infty\)}\\ 
+  =
+  &2^{-p}\sum_{k = -\infty}^{\infty}2^{(k+1)p}\omega(2^{k+1}) 
+  \leq\int_{0}^{\infty} \alpha^{p-1}\omega(\alpha) \,d\alpha =
+  \sum_{k=-\infty}^{\infty} \int_{2^k}^{2^{k+1}} \alpha^{p-1}\omega(\alpha)\,d\alpha &\leq
+ 2^{p-1} \sum_{k=-\infty}^{\infty} 2^{kp}\omega(2k).
+\end{align*}
+
+So, $f \in L^p$ if and only if
+\[
+  \sum_{k=-\infty}^{\infty} 2^{kp} \omega(2^k) < +\infty.
+\]
+
 
 \end{document}
